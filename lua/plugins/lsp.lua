@@ -25,10 +25,10 @@ return {
     lsp.preset('recommended')
 
     lsp.ensure_installed({
-      'css_ls',
+      'cssls',
       'eslint',
-      'html_ls',
-      'json_ls',
+      'html',
+      'jsonls',
       'lua_ls',
       'rust_analyzer',
       'tsserver',
