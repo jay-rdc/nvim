@@ -1,4 +1,5 @@
 vim.g.netrw_banner = 0
+vim.g.netrw_bufsettings = "noma nomod nu nobl nowrap ro"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -21,4 +22,4 @@ vim.opt.scrolloff = 8
 
 vim.opt.updatetime = 50
 
-vim.opt.statusline = " %{FugitiveStatusline()} --- %t --- %l/%L"
+vim.opt.statusline = " %{FugitiveStatusline()} | %t | %l/%L"
