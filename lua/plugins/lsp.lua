@@ -25,10 +25,13 @@ return {
     lsp.preset('recommended')
 
     lsp.ensure_installed({
-      'tsserver',
+      'css_ls',
       'eslint',
-      'rust_analyzer',
+      'html_ls',
+      'json_ls',
       'lua_ls',
+      'rust_analyzer',
+      'tsserver',
     })
 
     lsp.configure('lua_ls', {
