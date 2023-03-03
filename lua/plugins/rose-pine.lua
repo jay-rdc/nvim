@@ -7,7 +7,7 @@ return {
       disable_background = true,
       disable_float_background = true,
       highlight_groups = {
-        StatusLine = { fg = "iris", bg = "surface" },
+        StatusLine = { fg = "iris", bg = "base" },
       },
     })
     vim.cmd("colorscheme rose-pine")
