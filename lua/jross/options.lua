@@ -22,4 +22,4 @@ vim.opt.scrolloff = 8
 
 vim.opt.updatetime = 50
 
-vim.opt.statusline = " %{FugitiveStatusline()} | %t | %l/%L"
+vim.opt.statusline = " %{FugitiveStatusline()} %t %m"
