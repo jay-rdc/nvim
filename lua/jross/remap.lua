@@ -34,5 +34,3 @@ end)
 
 vim.keymap.set("n", "<leader>[", vim.cmd.bprev)
 vim.keymap.set("n", "<leader>]", vim.cmd.bnext)
-
-vim.keymap.set("n", "<leader>lz", vim.cmd.Lazy)
