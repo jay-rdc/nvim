@@ -14,4 +14,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-return require('lazy').setup('plugins')
+return require('lazy').setup('plugins', {
+  ui = {
+    border = "rounded",
+  },
+})
