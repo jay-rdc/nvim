@@ -79,5 +79,7 @@ return {
     vim.diagnostic.config({
       virtual_text = true
     })
+
+    vim.keymap.set("n", "<leader>ms", vim.cmd.Mason)
   end
 }
