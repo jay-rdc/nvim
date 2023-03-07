@@ -29,6 +29,7 @@ return {
       inactive = {
         a = { fg = rose_pine.base, bg = rose_pine.muted },
         b = { fg = rose_pine.muted, bg = rose_pine.surface},
+        c = { bg = "none" },
       }
     }
 
