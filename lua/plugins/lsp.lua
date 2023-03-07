@@ -54,7 +54,7 @@ return {
       sugguest_lsp_servers = false,
       sign_icons = {
         error = "󰅚",
-        warn = "",
+        warn = "󰀪",
         hint = "󰌶",
         info = "󰋽"
       }
