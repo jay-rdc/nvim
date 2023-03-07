@@ -25,9 +25,10 @@ return {
         a = { fg = rose_pine.base, bg = rose_pine.rose },
         b = { fg = rose_pine.rose, bg = rose_pine.surface },
       },
+
       inactive = {
         a = { fg = rose_pine.base, bg = rose_pine.muted },
-        b = { fg = rose_pine.muted },
+        b = { fg = rose_pine.muted, bg = rose_pine.surface},
       }
     }
 
@@ -43,8 +44,6 @@ return {
             "filename",
             icon = "",
             file_status = true,
-            separator = { left = "", right = "" },
-            right_padding = 2,
           },
         },
         lualine_b = {
@@ -58,19 +57,19 @@ return {
           },
         },
         lualine_c = {},
+
         lualine_x = {},
         lualine_y = {},
         lualine_z = {},
       },
+
       inactive_sections = {
         lualine_a = {
           {
             "filename",
             icon = "",
             file_status = true,
-            separator = { left = "", right = "" },
-            right_padding = 2,
-          }
+          },
         },
         lualine_b = {
           {
@@ -79,6 +78,7 @@ return {
           },
         },
         lualine_c = {},
+
         lualine_x = {},
         lualine_y = {},
         lualine_z = {},
