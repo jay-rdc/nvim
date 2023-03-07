@@ -6,6 +6,9 @@ return {
       disable_italics = true,
       disable_background = true,
       disable_float_background = true,
+      groups = {
+        border = "highlight_high"
+      },
       highlight_groups = {
         StatusLine = { bg = "none" },
         StatusLineSectionA = { fg = "base", bg = "rose" },
