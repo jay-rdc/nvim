@@ -50,6 +50,20 @@ return {
       }
     })
 
+    local cmp = require('cmp')
+    local cmp_select = { behavior = cmp.SelectBehavior.Select }
+    local cmp_mappings = lsp.defaults.cmp_mappings({
+      ["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
+      ["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
+    })
+
+    cmp_mappings["<Tab>"] = nil
+    cmp_mappings["<S-Tab>"] = nil
+
+    lsp.setup_nvim_cmp({
+      mapping = cmp_mappings
+    })
+
     lsp.set_preferences({
       sugguest_lsp_servers = false,
       sign_icons = {
