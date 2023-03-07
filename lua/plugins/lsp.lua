@@ -53,10 +53,10 @@ return {
     lsp.set_preferences({
       sugguest_lsp_servers = false,
       sign_icons = {
-        error = "E",
-        warn = "W",
-        hint = "H",
-        info = "I"
+        error = "󰅚",
+        warn = "",
+        hint = "󰌶",
+        info = "󰋽"
       }
     })
 
