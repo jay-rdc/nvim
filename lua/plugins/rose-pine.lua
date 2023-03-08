@@ -3,7 +3,7 @@ return {
   name = "rose-pine",
   config = function()
     require("rose-pine").setup({
-      disable_italics = true,
+      disable_italics = false,
       disable_background = true,
       disable_float_background = true,
       groups = {
