@@ -14,7 +14,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move highlighted text up 
 
 vim.keymap.set("x", "<leader>p", [["_dP"]], { desc = "Paste yanked text without yanking replaced text" })
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank text to system clipboard" })
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete then yank deleted text to system clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete text without yanking deleted text" })
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>")
