@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.keymap.set("n", "<leader>lz", vim.cmd.Lazy)
+vim.keymap.set("n", "<leader>lz", vim.cmd.Lazy, { desc = "Lazy: Show dashboard" })
 
 return require("lazy").setup("plugins", {
   ui = {
