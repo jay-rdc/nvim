@@ -100,6 +100,6 @@ return {
       virtual_text = true
     })
 
-    vim.keymap.set("n", "<leader>ms", vim.cmd.Mason, { desc = "Mason: Show dashboard" })
+    vim.keymap.set("n", "<leader>msn", vim.cmd.Mason, { desc = "Mason: Show dashboard" })
   end
 }
