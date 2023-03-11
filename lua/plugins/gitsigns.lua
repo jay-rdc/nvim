@@ -15,20 +15,20 @@ return {
           if vim.wo.diff then return "]c" end
           vim.schedule(function() gs.next_hunk() end)
           return "<Ignore>"
-        end, { expr = true })
+        end, { expr = true, desc = "Gitsigns: Jump to next hunk" })
 
         map("n", "[c", function()
           if vim.wo.diff then return "[c" end
           vim.schedule(function() gs.prev_hunk() end)
           return "<Ignore>"
-        end, { expr = true })
+        end, { expr = true, desc = "Gitsigns: Jump to previous hunk" })
 
-        map({ "n", "v" }, "<leader>hs", gs.stage_hunk)
-        map({ "n", "v" }, "<leader>hr", gs.reset_hunk)
-        map("n", "<leader>hu", gs.undo_stage_hunk)
-        map("n", "<leader>hp", gs.preview_hunk)
+        map({ "n", "v" }, "<leader>hs", gs.stage_hunk, { desc = "Gitsigns: Stage hunk" })
+        map({ "n", "v" }, "<leader>hr", gs.reset_hunk, { desc = "Gitsigns: Reset hunk" })
+        map("n", "<leader>hu", gs.undo_stage_hunk, { desc = "Gitsigns: Undo stage hunk" })
+        map("n", "<leader>hp", gs.preview_hunk, { desc = "Gitsigns: Preview hunk" })
 
-        map({ "o", "x" }, "ih", "<cmd>Gitsigns select_hunk<CR>")
+        map({ "o", "x" }, "ih", "<cmd>Gitsigns select_hunk<CR>", { desc = "Gitsigns: Select hunk" })
       end
     }
   end
