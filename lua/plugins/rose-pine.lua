@@ -12,9 +12,9 @@ return {
       highlight_groups = {
         StatusLine = { bg = "none" },
         StatusLineSectionA = { fg = "base", bg = "rose" },
-        StatusLineSectionB = { fg = "rose", bg = "surface" },
+        StatusLineSectionB = { fg = "rose", bg = "overlay" },
         StatusLineSectionANC = { fg = "base", bg = "muted" },
-        StatusLineSectionBNC = { fg = "muted", bg = "surface" },
+        StatusLineSectionBNC = { fg = "muted", bg = "overlay" },
       },
     })
     vim.cmd("colorscheme rose-pine")
