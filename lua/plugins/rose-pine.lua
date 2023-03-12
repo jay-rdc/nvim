@@ -15,6 +15,7 @@ return {
         StatusLineSectionB = { fg = "rose", bg = "overlay" },
         StatusLineSectionANC = { fg = "base", bg = "muted" },
         StatusLineSectionBNC = { fg = "muted", bg = "overlay" },
+        GitSignsChange = { fg = "gold" },
       },
     })
     vim.cmd("colorscheme rose-pine")
