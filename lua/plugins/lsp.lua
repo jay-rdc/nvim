@@ -86,7 +86,7 @@ return {
       vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
       vim.keymap.set("n", "<leader>=", function() vim.lsp.buf.format() end, opts)
 
-      vim.keymap.set("n", "<leader>df", function() vim.diagnostic.open_float() end, opts)
+      vim.keymap.set("n", "<leader>df", function() vim.diagnostic.open_float({ focusable = true }) end, opts)
       vim.keymap.set("n", "<leader>dq", function() vim.diagnostic.setqflist() end, opts)
 
     end)
