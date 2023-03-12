@@ -8,6 +8,7 @@ return {
         "css",
 			  "diff",
         "gitcommit",
+        "gitignore",
 			  "help",
         "html",
 			  "javascript",
