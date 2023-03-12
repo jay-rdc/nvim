@@ -88,8 +88,6 @@ return {
 
       vim.keymap.set("n", "<leader>df", function() vim.diagnostic.open_float() end, opts)
       vim.keymap.set("n", "<leader>dq", function() vim.diagnostic.setqflist() end, opts)
-      vim.keymap.set("n", "<leader>dk", function() vim.diagnostic.goto_next() end, opts)
-      vim.keymap.set("n", "<leader>dj", function() vim.diagnostic.goto_prev() end, opts)
 
     end)
 
