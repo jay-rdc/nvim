@@ -50,13 +50,15 @@ return {
       },
     })
 
+    local css_lint_rules = {
+      lint = {
+        unknownAtRules = "ignore",
+      },
+    }
     lsp.configure("cssls", {
       settings = {
-        css = {
-          lint = {
-            unknownAtRules = "ignore",
-          },
-        },
+        css = css_lint_rules,
+        scss = css_lint_rules,
       },
     })
 
