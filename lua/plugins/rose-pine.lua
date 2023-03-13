@@ -1,6 +1,7 @@
 return {
   "rose-pine/neovim",
   name = "rose-pine",
+  lazy = true,
   config = function()
     require("rose-pine").setup({
       disable_italics = false,
@@ -18,6 +19,6 @@ return {
         GitSignsChange = { fg = "gold" },
       },
     })
-    vim.cmd("colorscheme rose-pine")
+    -- vim.cmd("colorscheme rose-pine")
   end
 }
