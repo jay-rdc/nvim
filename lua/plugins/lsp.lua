@@ -44,10 +44,20 @@ return {
       settings = {
         Lua = {
           diagnostics = {
-            globals = { "vim" }
-          }
-        }
-      }
+            globals = { "vim" },
+          },
+        },
+      },
+    })
+
+    lsp.configure("cssls", {
+      settings = {
+        css = {
+          lint = {
+            unknownAtRules = "ignore",
+          },
+        },
+      },
     })
 
     local cmp = require("cmp")
