@@ -8,6 +8,8 @@ return {
       custom_highlights = function (colors)
         return {
           LineNr = { fg = colors.surface2 },
+          CursorLine = { fg = colors.peach },
+          CursorLineNr = { fg = colors.surface2 },
           StatusLineSectionA = { fg = colors.crust, bg = colors.pink },
           StatusLineSectionB = { fg = colors.pink, bg = colors.surface0 },
           StatusLineSectionANC = { fg = colors.crust, bg = colors.overlay0 },
