@@ -27,6 +27,7 @@ return {
         map({ "n", "v" }, "<leader>hr", ":Gitsigns reset_hunk<CR>", { desc = "Gitsigns: Reset hunk" })
         map("n", "<leader>hu", gs.undo_stage_hunk, { desc = "Gitsigns: Undo stage hunk" })
         map("n", "<leader>hp", gs.preview_hunk, { desc = "Gitsigns: Preview hunk" })
+        map("n", "<leader>hb", function() gs.blame_line{ full = true } end, { desc = "Gitsigns: Blame line" })
 
         map({ "o", "x" }, "ih", ":Gitsigns select_hunk<CR>", { desc = "Gitsigns: Select hunk" })
       end
