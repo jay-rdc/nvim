@@ -24,9 +24,14 @@ return {
       sections = {
         lualine_a = {
           {
+            "filetype",
+            colored = false,
+            icon_only = true,
+            separator = "",
+            padding = { left = 1, right = 0 },
+          },
+          {
             "filename",
-            icon = "",
-            file_status = true,
           },
         },
         lualine_b = {
@@ -49,9 +54,14 @@ return {
       inactive_sections = {
         lualine_a = {
           {
+            "filetype",
+            colored = false,
+            icon_only = true,
+            separator = "",
+            padding = { left = 1, right = 0 },
+          },
+          {
             "filename",
-            icon = "",
-            file_status = true,
           },
         },
         lualine_b = {
@@ -65,7 +75,7 @@ return {
         lualine_x = {},
         lualine_y = {},
         lualine_z = {},
-      }
+      },
     }
   end
 }
