@@ -28,7 +28,7 @@ return {
         map("n", "<leader>hu", gs.undo_stage_hunk, { desc = "Gitsigns: Undo stage hunk" })
         map("n", "<leader>hp", gs.preview_hunk, { desc = "Gitsigns: Preview hunk" })
 
-        map({ "o", "x" }, "ih", "<cmd>Gitsigns select_hunk<CR>", { desc = "Gitsigns: Select hunk" })
+        map({ "o", "x" }, "ih", ":Gitsigns select_hunk<CR>", { desc = "Gitsigns: Select hunk" })
       end
     }
   end
