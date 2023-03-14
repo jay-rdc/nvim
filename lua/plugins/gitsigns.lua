@@ -29,7 +29,7 @@ return {
         map("n", "<leader>hp", gs.preview_hunk, { desc = "Gitsigns: Preview hunk" })
         map("n", "<leader>hb", function() gs.blame_line{ full = true } end, { desc = "Gitsigns: Blame line" })
 
-        map({ "o", "x" }, "ih", ":Gitsigns select_hunk<CR>", { desc = "Gitsigns: Select hunk" })
+        map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Gitsigns: Select hunk" })
       end
     }
   end
