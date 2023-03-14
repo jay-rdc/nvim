@@ -22,8 +22,8 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz", { desc = "Go to next quickfix list item" })
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz", { desc = "Go to previous quickfix list item" })
 
-vim.keymap.set("n", "<leader>[", vim.cmd.bprev, { desc = "Switch to previous buffer" })
-vim.keymap.set("n", "<leader>]", vim.cmd.bnext, { desc = "Switch to next buffer" })
+vim.keymap.set("n", "[b", vim.cmd.bprev, { desc = "Switch to previous buffer" })
+vim.keymap.set("n", "]b", vim.cmd.bnext, { desc = "Switch to next buffer" })
 
 vim.keymap.set("n", [[<leader>\\]], "<cmd>e ++ff=dos<CR>", { desc = "Change line ending of current file to CRLF"})
 
