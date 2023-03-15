@@ -5,7 +5,7 @@ Pre-requisites for Windows:
 Installation: 
 - install the following packages using scoop:
   ```
-  llvm
+  gcc (or llvm)
   neovim
   ripgrep
   vcredist2022 (Optional)
