@@ -2,7 +2,7 @@ return {
   "catppuccin/nvim",
   name = "catppuccin",
   config = function ()
-    require("catppuccin").setup {
+    require("catppuccin").setup({
       flavour = "mocha",
       transparent_background = true,
       custom_highlights = function (colors)
@@ -17,7 +17,7 @@ return {
           TelescopeResultsNormal = { fg = colors.overlay2 },
         }
       end
-    }
+    })
     vim.cmd("colorscheme catppuccin")
   end
 }

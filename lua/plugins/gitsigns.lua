@@ -1,7 +1,7 @@
 return {
   "lewis6991/gitsigns.nvim",
   config = function()
-    require("gitsigns").setup {
+    require("gitsigns").setup({
       on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
 
@@ -31,6 +31,6 @@ return {
 
         map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Gitsigns: Select hunk" })
       end
-    }
+    })
   end
 }

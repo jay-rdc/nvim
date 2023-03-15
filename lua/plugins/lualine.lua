@@ -15,7 +15,7 @@ return {
       }
     }
 
-    require("lualine").setup {
+    require("lualine").setup({
       options = {
         theme = custom_theme,
         component_separators = "|",
@@ -76,6 +76,6 @@ return {
         lualine_y = {},
         lualine_z = {},
       },
-    }
+    })
   end
 }
