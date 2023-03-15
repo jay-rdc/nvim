@@ -5,9 +5,10 @@ Pre-requisites for Windows:
 Installation: 
 - install the following packages using scoop:
   ```
-  gcc
+  llvm
   neovim
   ripgrep
+  fd (Optional)
   ```
 - open Neovim by running `nvim` in a terminal
 - exit Neovim
