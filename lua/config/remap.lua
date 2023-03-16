@@ -1,8 +1,6 @@
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "Explore netrw" })
-vim.keymap.set({ "n", "v", "o" }, "H", "^", { desc = "Go to start of line" })
-vim.keymap.set({ "n", "v", "o" }, "L", "$", { desc = "Go to end of line" })
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Go down half a page then center cursor" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Go up half a page then center cursor" })
