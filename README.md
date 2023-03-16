@@ -1,15 +1,18 @@
 ## jross.nvim
 Pre-requisites for Windows:
 - [scoop](https://scoop.sh/)
+- [MS Visual Studio](https://visualstudio.microsoft.com/downloads/)
+  - Windows 11 SDK
+  - MSVC C++ x64/x86 build tools (latest)
 
 Installation: 
 - install the following packages using scoop:
   ```
-  gcc (or llvm)
-  neovim
+  llvm
   ripgrep
   vcredist2022 (Optional)
   fd (Optional)
+  neovim
   ```
 - open Neovim by running `nvim` in a terminal
 - exit Neovim
