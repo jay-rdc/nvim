@@ -20,20 +20,13 @@ return {
     { "rafamadriz/friendly-snippets" }, -- Optional
   },
   config = function()
-    require("mason").setup({
-      ui = {
-        border = "rounded",
-        icons = {
-          package_installed = "󰗠",
-          package_pending = "󰳠",
-          package_uninstalled = "󰝦",
-        }
-      },
-    })
-
     local lsp = require("lsp-zero")
 
-    lsp.preset("recommended")
+    lsp.preset({
+      name = "minimal",
+      manage_nvim_cmp = true,
+      suggest_lsp_servers = false,
+    })
 
     lsp.ensure_installed({
       "cssls",
@@ -83,19 +76,19 @@ return {
     })
 
     lsp.set_preferences({
-      sugguest_lsp_servers = false,
       sign_icons = {
         error = "󰅚",
         warn = "󰀪",
         hint = "󰌶",
         info = "󰋽"
-      }
+      },
     })
 
     ---@diagnostic disable-next-line: unused-local
     lsp.on_attach(function(client, bufnr)
       local opts = { buffer = bufnr, remap = false }
 
+      -- LSP Actions
       vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
       vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
       vim.keymap.set("n", "<leader>a", function() vim.lsp.buf.code_action() end, opts)
@@ -103,6 +96,7 @@ return {
       vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
       vim.keymap.set("n", "<leader>=", function() vim.lsp.buf.format() end, opts)
 
+      -- Diagnostics
       vim.keymap.set("n", "<leader>df", function() vim.diagnostic.open_float({ focusable = true }) end, opts)
       vim.keymap.set("n", "<leader>dq", function() vim.diagnostic.setqflist() end, opts)
 
@@ -112,6 +106,17 @@ return {
 
     vim.diagnostic.config({
       virtual_text = true
+    })
+
+    require("mason").setup({
+      ui = {
+        border = "rounded",
+        icons = {
+          package_installed = "󰗠",
+          package_pending = "󰳠",
+          package_uninstalled = "󰝦",
+        },
+      },
     })
 
     vim.keymap.set("n", "<leader>msn", vim.cmd.Mason, { desc = "Mason: Show dashboard" })
