@@ -6,6 +6,23 @@ return {
     { "kyazdani42/nvim-web-devicons", lazy = true }
   },
   config = function()
+    local action_layout = require("telescope.actions.layout")
+    require("telescope").setup({
+      defaults = {
+        layout_strategy = "center",
+        sorting_strategy = "ascending",
+        preview = { hide_on_startup = true },
+        mappings = {
+          n = {
+            ["<M-p>"] = action_layout.toggle_preview,
+          },
+          i = {
+            ["<M-p>"] = action_layout.toggle_preview,
+          },
+        },
+      },
+    })
+
     local builtin = require("telescope.builtin")
     vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope: Find files" })
     vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Telescope: Find word" })
