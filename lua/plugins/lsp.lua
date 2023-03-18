@@ -109,19 +109,23 @@ return {
 
     ---@diagnostic disable-next-line: unused-local
     lsp.on_attach(function(client, bufnr)
-      local opts = { buffer = bufnr, remap = false }
+      local opts = function(desc)
+        return { buffer = bufnr, remap = false, desc = desc or "" }
+      end
 
       -- LSP Actions
-      vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-      vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-      vim.keymap.set("n", "<leader>a", function() vim.lsp.buf.code_action() end, opts)
-      vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
-      vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
-      vim.keymap.set("n", "<leader>=", function() vim.lsp.buf.format() end, opts)
+      vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts("LSP: Go to definition"))
+      vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts("LSP: Hover"))
+      vim.keymap.set("n", "<leader>a", function() vim.lsp.buf.code_action() end, opts("LSP: Code action"))
+      vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts("LSP: Rename"))
+      vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts("LSP: References"))
+      vim.keymap.set("n", "<leader>=", function() vim.lsp.buf.format() end, opts("LSP: Format"))
 
       -- Diagnostics
-      vim.keymap.set("n", "<leader>df", function() vim.diagnostic.open_float({ focusable = true }) end, opts)
-      vim.keymap.set("n", "<leader>dq", function() vim.diagnostic.setqflist() end, opts)
+      vim.keymap.set("n", "<leader>df", function() vim.diagnostic.open_float({ focusable = true }) end,
+      opts("Diagnostics: Open float"))
+      vim.keymap.set("n", "<leader>dq", function() vim.diagnostic.setqflist() end,
+      opts("Diagnostics: Add diagnostics in quickfixlist"))
     end)
 
     lsp.setup()
