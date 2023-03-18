@@ -2,8 +2,15 @@ return {
   "nvim-telescope/telescope.nvim",
   branch = "0.1.x",
   dependencies = {
-    { "nvim-lua/plenary.nvim" },
-    { "kyazdani42/nvim-web-devicons", lazy = true }
+    { "nvim-lua/plenary.nvim", lazy = true },
+    { "kyazdani42/nvim-web-devicons", lazy = true },
+  },
+  cmd = "Telescope",
+  keys = {
+    { mode = "n", "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "Telescope: Find in current file" },
+    { mode = "n", "<leader>fw", "<cmd>Telescope live_grep<CR>", desc = "Telescope: Find word" },
+    { mode = "n", "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Telescope: Find help tags" },
+    { mode = "n", "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Telescope: Find files" },
   },
   config = function()
     local action = require("telescope.actions")
@@ -27,11 +34,5 @@ return {
         },
       },
     })
-
-    local builtin = require("telescope.builtin")
-    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope: Find files" })
-    vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Telescope: Find word" })
-    vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope: Find help tags" })
-    vim.keymap.set("n", "<leader>fc", builtin.current_buffer_fuzzy_find, { desc = "Telescope: Find in current file" })
   end
 }
