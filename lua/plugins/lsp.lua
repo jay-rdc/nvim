@@ -25,6 +25,12 @@ return {
     -- Snippets
     { "L3MON4D3/LuaSnip" },             -- Required
     { "rafamadriz/friendly-snippets" }, -- Optional
+
+    -- Formatting
+    {
+      "jose-elias-alvarez/null-ls.nvim",
+      dependencies = { "nvim-lua/plenary.nvim", lazy = true },
+    },
   },
   config = function()
     local lsp = require("lsp-zero")
@@ -109,6 +115,18 @@ return {
     end)
 
     lsp.setup()
+
+    local null_ls = require("null-ls")
+    local null_opts = lsp.build_options("null-ls", {})
+
+    null_ls.setup({
+      on_attach = function (client, bufnr)
+        null_opts.on_attach(client, bufnr)
+      end,
+      sources = {
+        null_ls.builtins.formatting.prettierd,
+      },
+    })
 
     vim.diagnostic.config({
       virtual_text = true
