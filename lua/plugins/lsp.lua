@@ -1,10 +1,17 @@
 return {
   "VonHeikemen/lsp-zero.nvim",
   branch = "v1.x",
+  event = { "BufNewFile", "BufReadPre" },
+  cmd = "Mason",
   dependencies = {
     -- LSP Support
     { "neovim/nvim-lspconfig" }, -- Required
-    { "williamboman/mason.nvim" }, -- Optional
+    {
+      "williamboman/mason.nvim", -- Optional
+      keys = {
+        { mode = "n", "<leader>msn", vim.cmd.Mason, desc = "Mason: Show dashboard" },
+      },
+    },
     { "williamboman/mason-lspconfig.nvim" }, -- Optional
 
     -- Autocompletion
@@ -118,7 +125,5 @@ return {
         },
       },
     })
-
-    vim.keymap.set("n", "<leader>msn", vim.cmd.Mason, { desc = "Mason: Show dashboard" })
   end
 }
