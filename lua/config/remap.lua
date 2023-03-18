@@ -11,7 +11,7 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Go to previous word match then cente
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move highlighted text down one line" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move highlighted text up one line" })
 
-vim.keymap.set("x", "<leader>p", [["_dP"]], { desc = "Paste yanked text without yanking replaced text" })
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste yanked text without yanking replaced text" })
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank text to system clipboard" })
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete text without yanking deleted text" })
 
