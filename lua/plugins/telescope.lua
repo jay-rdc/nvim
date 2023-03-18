@@ -6,6 +6,7 @@ return {
     { "kyazdani42/nvim-web-devicons", lazy = true }
   },
   config = function()
+    local action = require("telescope.actions")
     local action_layout = require("telescope.actions.layout")
     require("telescope").setup({
       defaults = {
@@ -20,6 +21,8 @@ return {
           },
           i = {
             ["<M-p>"] = action_layout.toggle_preview,
+            ["<C-j>"] = action.move_selection_next,
+            ["<C-k>"] = action.move_selection_previous,
           },
         },
       },
