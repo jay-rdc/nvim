@@ -33,10 +33,20 @@ return {
     },
   },
   config = function()
-    local lsp = require("lsp-zero")
+    require("mason.settings").set({
+      ui = {
+        border = "rounded",
+        icons = {
+          package_installed = "",
+          package_pending = "󰳠",
+          package_uninstalled = "󰝦",
+        },
+      },
+    })
 
-    lsp.preset({
+    local lsp = require("lsp-zero").preset({
       name = "minimal",
+      set_lsp_keymaps = false,
       manage_nvim_cmp = true,
       suggest_lsp_servers = false,
     })
@@ -120,7 +130,7 @@ return {
     local null_opts = lsp.build_options("null-ls", {})
 
     null_ls.setup({
-      on_attach = function (client, bufnr)
+      on_attach = function(client, bufnr)
         null_opts.on_attach(client, bufnr)
       end,
       sources = {
@@ -130,17 +140,6 @@ return {
 
     vim.diagnostic.config({
       virtual_text = true
-    })
-
-    require("mason").setup({
-      ui = {
-        border = "rounded",
-        icons = {
-          package_installed = "󰗠",
-          package_pending = "󰳠",
-          package_uninstalled = "󰝦",
-        },
-      },
     })
   end
 }
