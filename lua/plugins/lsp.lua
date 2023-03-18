@@ -15,15 +15,15 @@ return {
     { "williamboman/mason-lspconfig.nvim" }, -- Optional
 
     -- Autocompletion
-    { "hrsh7th/nvim-cmp" }, -- Required
-    { "hrsh7th/cmp-nvim-lsp" }, -- Required
-    { "hrsh7th/cmp-buffer" }, -- Optional
-    { "hrsh7th/cmp-path" }, -- Optional
+    { "hrsh7th/nvim-cmp" },         -- Required
+    { "hrsh7th/cmp-nvim-lsp" },     -- Required
+    { "hrsh7th/cmp-buffer" },       -- Optional
+    { "hrsh7th/cmp-path" },         -- Optional
     { "saadparwaiz1/cmp_luasnip" }, -- Optional
-    { "hrsh7th/cmp-nvim-lua" }, -- Optional
+    { "hrsh7th/cmp-nvim-lua" },     -- Optional
 
     -- Snippets
-    { "L3MON4D3/LuaSnip" }, -- Required
+    { "L3MON4D3/LuaSnip" },             -- Required
     { "rafamadriz/friendly-snippets" }, -- Optional
   },
   config = function()
@@ -106,7 +106,6 @@ return {
       -- Diagnostics
       vim.keymap.set("n", "<leader>df", function() vim.diagnostic.open_float({ focusable = true }) end, opts)
       vim.keymap.set("n", "<leader>dq", function() vim.diagnostic.setqflist() end, opts)
-
     end)
 
     lsp.setup()
