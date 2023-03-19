@@ -1,6 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "kyazdani42/nvim-web-devicons", lazy = true },
+  dependencies = { "kyazdani42/nvim-web-devicons" },
   config = function ()
     local custom_theme = {
       normal = {

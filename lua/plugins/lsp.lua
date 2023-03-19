@@ -29,7 +29,7 @@ return {
     -- Formatting
     {
       "jose-elias-alvarez/null-ls.nvim",
-      dependencies = { "nvim-lua/plenary.nvim", lazy = true },
+      dependencies = { "nvim-lua/plenary.nvim" },
     },
   },
   config = function()
