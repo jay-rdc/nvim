@@ -118,7 +118,7 @@ return {
       vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts("LSP: Hover"))
       vim.keymap.set("n", "<leader>a", function() vim.lsp.buf.code_action() end, opts("LSP: Code action"))
       vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts("LSP: Rename"))
-      vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts("LSP: References"))
+      vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.references() end, opts("LSP: References"))
       vim.keymap.set("n", "<leader>=", function() vim.lsp.buf.format() end, opts("LSP: Format"))
 
       -- Diagnostics
