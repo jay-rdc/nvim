@@ -1,5 +1,4 @@
 vim.g.netrw_banner = 0
-vim.g.netrw_bufsettings = "noma nomod nu nobl nowrap ro"
 
 vim.opt.number = true
 vim.opt.relativenumber = true
