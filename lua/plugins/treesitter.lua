@@ -2,6 +2,7 @@ return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   event = { "BufNewFile", "BufReadPre" },
+  dependencies = { "nvim-treesitter/nvim-treesitter-angular" },
   cmd = {
     "TSInstall",
     "TSInstallSync",
