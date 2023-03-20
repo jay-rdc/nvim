@@ -123,9 +123,11 @@ return {
 
       -- Diagnostics
       vim.keymap.set("n", "<leader>df", function() vim.diagnostic.open_float({ focusable = true }) end,
-      opts("Diagnostics: Open float"))
+        opts("Diagnostics: Open float"))
       vim.keymap.set("n", "<leader>dq", function() vim.diagnostic.setqflist() end,
-      opts("Diagnostics: Add diagnostics in quickfixlist"))
+        opts("Diagnostics: Add diagnostics in quickfixlist"))
+      vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts("Diagnostics: Go to previous diagnostic"))
+      vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts("Diagnostics: Go to next diagnostic"))
     end)
 
     lsp.setup()
