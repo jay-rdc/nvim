@@ -3,7 +3,14 @@ return {
   dependencies = {
     { "nvim-lua/plenary.nvim" },
   },
-  config = function()
+  opts = {
+    menu = {
+      width = 100,
+    },
+  },
+  config = function(_, opts)
+    require("harpoon").setup(opts)
+
     local mark = require("harpoon.mark")
     local ui = require("harpoon.ui")
 
