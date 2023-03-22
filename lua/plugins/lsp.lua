@@ -126,6 +126,14 @@ return {
 
     lsp.setup()
 
+    local cmp_config = lsp.defaults.cmp_config({
+      window = {
+        completion = cmp.config.window.bordered()
+      }
+    })
+
+    cmp.setup(cmp_config)
+
     vim.diagnostic.config({
       virtual_text = true
     })
