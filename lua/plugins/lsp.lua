@@ -46,6 +46,7 @@ return {
     })
 
     lsp.ensure_installed({
+      "angularls",
       "cssls",
       "eslint",
       "html",
