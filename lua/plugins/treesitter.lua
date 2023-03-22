@@ -24,7 +24,6 @@ return {
       "json",
       "lua",
       "markdown",
-      "rust",
       "typescript",
     },
     sync_install = false,

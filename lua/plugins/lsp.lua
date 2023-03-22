@@ -51,7 +51,6 @@ return {
       "html",
       "jsonls",
       "lua_ls",
-      "rust_analyzer",
       "tsserver",
     })
 
