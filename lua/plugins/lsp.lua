@@ -173,10 +173,10 @@ return {
         end,
       },
       sources = cmp.config.sources({
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
         { name = "path" },
-        { name = "nvim_lsp", keyword_length = 3 },
-        { name = "buffer",   keyword_length = 3 },
-        { name = "luasnip",  keyword_length = 2 },
+        { name = "buffer" },
       }),
       mapping = {
         ["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
