@@ -6,12 +6,11 @@ return {
     { mode = "n", "<leader>msn", vim.cmd.Mason, desc = "Mason: Show dashboard" },
   },
   dependencies = {
-    -- Mason
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
   },
   config = function()
-    -- LSP Settings
+    -- LSP and Diagnostics Settings
     local sign = function(opts)
       vim.fn.sign_define(opts.name, {
         texthl = opts.name,
