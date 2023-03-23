@@ -24,7 +24,7 @@ return {
     local sign = function(opts)
       vim.fn.sign_define(opts.name, {
         texthl = opts.name,
-        text= opts.text,
+        text = opts.text,
         numhl = "",
       })
     end
@@ -99,7 +99,7 @@ return {
       vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts("Diagnostics: Go to next diagnostic"))
       vim.keymap.set("n", "<leader>df", function() vim.diagnostic.open_float() end, opts("Diagnostics: Open float"))
       vim.keymap.set("n", "<leader>dq", function() vim.diagnostic.setqflist() end,
-      opts("Diagnostics: Add diagnostics in quickfixlist"))
+        opts("Diagnostics: Add diagnostics in quickfixlist"))
     end
 
     local lspconfig = require("lspconfig")
@@ -161,11 +161,22 @@ return {
           max_width = 60,
         },
       },
+      formatting = {
+        fields = { "abbr", "menu", "kind" },
+        format = function(entry, item)
+          local short_name = { nvim_lsp = "LSP" }
+          local menu_name = short_name[entry.source.name] or entry.source.name
+
+          item.menu = string.format("[%s]", menu_name)
+
+          return item
+        end,
+      },
       sources = cmp.config.sources({
         { name = "path" },
         { name = "nvim_lsp", keyword_length = 3 },
-        { name = "buffer", keyword_length = 3 },
-        { name = "luasnip", keyword_length = 2 },
+        { name = "buffer",   keyword_length = 3 },
+        { name = "luasnip",  keyword_length = 2 },
       }),
       mapping = {
         ["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
