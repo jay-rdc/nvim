@@ -3,15 +3,13 @@ return {
   branch = "v1.x",
   event = { "BufNewFile", "BufReadPre" },
   cmd = "Mason",
+  keys = {
+    { mode = "n", "<leader>msn", vim.cmd.Mason, desc = "Mason: Show dashboard" },
+  },
   dependencies = {
     -- LSP Support
-    { "neovim/nvim-lspconfig" }, -- Required
-    {
-      "williamboman/mason.nvim", -- Optional
-      keys = {
-        { mode = "n", "<leader>msn", vim.cmd.Mason, desc = "Mason: Show dashboard" },
-      },
-    },
+    { "neovim/nvim-lspconfig" },             -- Required
+    { "williamboman/mason.nvim" },           -- Optional
     { "williamboman/mason-lspconfig.nvim" }, -- Optional
 
     -- Autocompletion
@@ -19,8 +17,8 @@ return {
     { "hrsh7th/cmp-nvim-lsp" },     -- Required
     { "hrsh7th/cmp-buffer" },       -- Optional
     { "hrsh7th/cmp-path" },         -- Optional
-    { "saadparwaiz1/cmp_luasnip" }, -- Optional
     { "hrsh7th/cmp-nvim-lua" },     -- Optional
+    { "saadparwaiz1/cmp_luasnip" }, -- Optional
 
     -- Snippets
     { "L3MON4D3/LuaSnip" },             -- Required
@@ -99,7 +97,6 @@ return {
       ["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
       ["<C-d>"] = cmp.mapping.scroll_docs(4),
       ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-
       ["<Tab>"] = vim.NIL,
       ["<S-Tab>"] = vim.NIL,
     })
