@@ -69,6 +69,10 @@ return {
             "FugitiveHead",
             icon = "󰘬",
           },
+          {
+            "diagnostics",
+            sources = { "nvim_diagnostic" },
+          },
         },
         lualine_c = {},
 
