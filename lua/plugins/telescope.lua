@@ -11,7 +11,7 @@ return {
     { mode = "n", "<leader>fw", "<cmd>Telescope live_grep<CR>", desc = "Telescope: Find word" },
     { mode = "n", "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Telescope: Find help tags" },
     { mode = "n", "<leader>fg", "<cmd>Telescope git_files<CR>", desc = "Telescope: Find git files" },
-    { mode = "n", "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Telescope: Find files" },
+    { mode = "n", "<leader>fd", "<cmd>Telescope find_files<CR>", desc = "Telescope: Find files" },
   },
   config = function()
     local action = require("telescope.actions")
