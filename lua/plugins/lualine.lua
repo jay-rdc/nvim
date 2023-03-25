@@ -1,14 +1,13 @@
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "kyazdani42/nvim-web-devicons" },
-  config = function ()
+  config = function()
     local custom_theme = {
       normal = {
         a = "StatusLineSectionA",
         b = "StatusLineSectionB",
         c = { bg = "none" },
       },
-
       inactive = {
         a = "StatusLineSectionANC",
         b = "StatusLineSectionBNC",
@@ -45,12 +44,10 @@ return {
           },
         },
         lualine_c = {},
-
         lualine_x = {},
         lualine_y = {},
         lualine_z = {},
       },
-
       inactive_sections = {
         lualine_a = {
           {
@@ -75,7 +72,6 @@ return {
           },
         },
         lualine_c = {},
-
         lualine_x = {},
         lualine_y = {},
         lualine_z = {},
