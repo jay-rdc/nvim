@@ -88,8 +88,6 @@ return {
       vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts("Diagnostics: Go to previous diagnostic"))
       vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts("Diagnostics: Go to next diagnostic"))
       vim.keymap.set("n", "<leader>df", function() vim.diagnostic.open_float() end, opts("Diagnostics: Open float"))
-      vim.keymap.set("n", "<leader>dq", function() vim.diagnostic.setqflist() end,
-        opts("Diagnostics: Add diagnostics in quickfixlist"))
     end
 
     local lspconfig = require("lspconfig")
