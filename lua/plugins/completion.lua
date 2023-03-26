@@ -10,7 +10,6 @@ return {
   config = function()
     local luasnip = require("luasnip")
     local cmp = require("cmp")
-    local cmp_select = { behavior = cmp.SelectBehavior.Select }
     cmp.setup({
       completion = {
         completeopt = "menu,menuone,noinsert",
@@ -45,8 +44,8 @@ return {
         { name = "buffer" },
       }),
       mapping = {
-        ["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
-        ["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
+        ["<C-j>"] = cmp.mapping.select_next_item(),
+        ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<C-d>"] = cmp.mapping.scroll_docs(4),
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
