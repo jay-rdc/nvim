@@ -18,6 +18,9 @@ return {
     local action_layout = require("telescope.actions.layout")
     require("telescope").setup({
       defaults = {
+        layout_config = {
+          preview_cutoff = 30,
+        },
         layout_strategy = "center",
         sorting_strategy = "ascending",
         preview = { hide_on_startup = true },
