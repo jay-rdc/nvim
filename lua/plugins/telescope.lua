@@ -19,7 +19,9 @@ return {
     require("telescope").setup({
       defaults = {
         layout_config = {
-          preview_cutoff = 30,
+          center = {
+            preview_cutoff = 30,
+          },
         },
         layout_strategy = "center",
         sorting_strategy = "ascending",
