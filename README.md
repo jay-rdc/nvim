@@ -1,4 +1,4 @@
-## jross.nvim
+## Neovim config using lazy as package manager
 Pre-requisites for Windows:
 - [scoop](https://scoop.sh/)
 - [MS Visual Studio](https://visualstudio.microsoft.com/downloads/)
