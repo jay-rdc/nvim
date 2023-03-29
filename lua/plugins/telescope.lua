@@ -5,14 +5,6 @@ return {
     { "nvim-lua/plenary.nvim" },
     { "kyazdani42/nvim-web-devicons" },
   },
-  cmd = "Telescope",
-  keys = {
-    { mode = "n", "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "Telescope: Find in current file" },
-    { mode = "n", "<leader>fw", "<cmd>Telescope live_grep<CR>", desc = "Telescope: Find word" },
-    { mode = "n", "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Telescope: Find help tags" },
-    { mode = "n", "<leader>fg", "<cmd>Telescope git_files<CR>", desc = "Telescope: Find git files" },
-    { mode = "n", "<leader>fd", "<cmd>Telescope find_files<CR>", desc = "Telescope: Find files" },
-  },
   config = function()
     local action = require("telescope.actions")
     local action_layout = require("telescope.actions.layout")
@@ -40,5 +32,11 @@ return {
         },
       },
     })
+
+    vim.keymap.set("n", "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope: Find in current file" })
+    vim.keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "Telescope: Find word" })
+    vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Telescope: Find help tags" })
+    vim.keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<CR>", { desc = "Telescope: Find git files" })
+    vim.keymap.set("n", "<leader>fd", "<cmd>Telescope find_files<CR>", { desc = "Telescope: Find files" })
   end
 }

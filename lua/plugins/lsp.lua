@@ -1,10 +1,5 @@
 return {
   "neovim/nvim-lspconfig",
-  event = { "BufNewFile", "BufReadPre" },
-  cmd = "Mason",
-  keys = {
-    { mode = "n", "<leader>msn", vim.cmd.Mason, desc = "Mason: Show dashboard" },
-  },
   dependencies = {
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
@@ -56,6 +51,8 @@ return {
         },
       },
     })
+
+    vim.keymap.set("n", "<leader>msn", vim.cmd.Mason, { desc = "Mason: Show dashboard" })
 
     require("mason-lspconfig").setup({
       ensure_installed = {
