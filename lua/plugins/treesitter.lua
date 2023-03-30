@@ -6,6 +6,8 @@ return {
     ensure_installed = {
       "css",
       "diff",
+      "git_config",
+      "git_rebase",
       "gitcommit",
       "gitignore",
       "help",
