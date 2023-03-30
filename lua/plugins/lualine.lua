@@ -30,6 +30,9 @@ return {
         theme = custom_theme,
         component_separators = "|",
         section_separators = { left = "", right = "" },
+        refresh = {
+          statusline = 100,
+        },
       },
       sections = {
         lualine_a = {
