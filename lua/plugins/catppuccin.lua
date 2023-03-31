@@ -7,6 +7,7 @@ return {
     transparent_background = true,
     custom_highlights = function(colors)
       return {
+        CopilotSuggestion = { link = "Comment" },
         LineNr = { fg = colors.surface2 },
         StatusLineSectionA = { fg = colors.crust, bg = colors.pink },
         StatusLineSectionB = { fg = colors.pink, bg = colors.surface0 },
