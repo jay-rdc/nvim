@@ -10,6 +10,34 @@ return {
     local luasnip = require("luasnip")
     local cmp = require("cmp")
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
+    local kind_icons = {
+      Text = "",
+      Method = "",
+      Function = "",
+      Constructor = "",
+      Field = "",
+      Variable = "",
+      Class = "ﴯ",
+      Interface = "",
+      Module = "",
+      Property = "ﰠ",
+      Unit = "",
+      Value = "",
+      Enum = "",
+      Keyword = "",
+      Snippet = "",
+      Color = "",
+      File = "",
+      Reference = "",
+      Folder = "",
+      EnumMember = "",
+      Constant = "",
+      Struct = "",
+      Event = "",
+      Operator = "",
+      TypeParameter = ""
+    }
+
     cmp.setup({
       completion = {
         completeopt = "menu,menuone,noinsert",
@@ -28,14 +56,10 @@ return {
         },
       },
       formatting = {
-        fields = { "abbr", "menu", "kind" },
-        format = function(entry, item)
-          local short_name = { nvim_lsp = "LSP" }
-          local menu_name = short_name[entry.source.name] or entry.source.name
-
-          item.menu = string.format("[%s]", menu_name)
-
-          return item
+        fields = { "abbr", "kind" },
+        format = function(_, vim_item)
+          vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+          return vim_item
         end,
       },
       sources = cmp.config.sources({
