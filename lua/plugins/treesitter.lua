@@ -1,6 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
+  dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
   main = "nvim-treesitter.configs",
   opts = {
     ensure_installed = {
@@ -23,6 +24,18 @@ return {
     highlight = {
       enable = true,
       additional_vim_regex_highlighting = false,
+    },
+    textobjects = {
+      select = {
+        enable = true,
+        lookahead = true,
+        keymaps = {
+          ["af"] = "@function.outer",
+          ["if"] = "@function.inner",
+          ["ac"] = "@class.outer",
+          ["ic"] = "@class.inner",
+        },
+      },
     },
   },
 }
