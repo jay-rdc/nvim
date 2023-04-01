@@ -32,7 +32,8 @@ return {
           {
             theme_icon,
             color = "StatusLineThemeIcon",
-            separator = { right = "" },
+            separator = { left = "", right = "" },
+            padding = 0,
           },
           {
             "FugitiveHead",
@@ -65,7 +66,8 @@ return {
           {
             theme_icon,
             color = "StatusLineThemeIconNC",
-            separator = { right = "" },
+            separator = { left = "", right = "" },
+            padding = 0,
           },
           {
             "FugitiveHead",
