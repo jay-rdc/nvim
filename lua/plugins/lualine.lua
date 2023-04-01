@@ -14,6 +14,10 @@ return {
       }
     }
 
+    local function paw()
+      return ""
+    end
+
     require("lualine").setup({
       options = {
         theme = custom_theme,
@@ -26,20 +30,25 @@ return {
       sections = {
         lualine_a = {
           {
+            paw,
+            color = "StatusLineThemeIcon",
+            separator = { right = "" },
+          },
+          {
+            "FugitiveHead",
+            icon = "󰘬",
+          },
+        },
+        lualine_b = {
+          {
             "filetype",
-            colored = false,
+            colored = true,
             icon_only = true,
             separator = "",
             padding = { left = 1, right = 0 },
           },
           {
             "filename",
-          },
-        },
-        lualine_b = {
-          {
-            "FugitiveHead",
-            icon = "󰘬",
           },
           {
             "diagnostics",
@@ -54,6 +63,17 @@ return {
       inactive_sections = {
         lualine_a = {
           {
+            paw,
+            color = "StatusLineThemeIconNC",
+            separator = { right = "" },
+          },
+          {
+            "FugitiveHead",
+            icon = "󰘬",
+          },
+        },
+        lualine_b = {
+          {
             "filetype",
             colored = false,
             icon_only = true,
@@ -62,12 +82,6 @@ return {
           },
           {
             "filename",
-          },
-        },
-        lualine_b = {
-          {
-            "FugitiveHead",
-            icon = "󰘬",
           },
           {
             "diagnostics",
