@@ -14,7 +14,7 @@ return {
       }
     }
 
-    local function paw()
+    local function theme_icon()
       return ""
     end
 
@@ -30,7 +30,7 @@ return {
       sections = {
         lualine_a = {
           {
-            paw,
+            theme_icon,
             color = "StatusLineThemeIcon",
             separator = { right = "" },
           },
@@ -63,7 +63,7 @@ return {
       inactive_sections = {
         lualine_a = {
           {
-            paw,
+            theme_icon,
             color = "StatusLineThemeIconNC",
             separator = { right = "" },
           },
