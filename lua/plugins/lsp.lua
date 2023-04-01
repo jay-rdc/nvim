@@ -1,8 +1,8 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    { "williamboman/mason.nvim" },
-    { "williamboman/mason-lspconfig.nvim" },
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
   },
   config = function()
     -- LSP and Diagnostics Settings
