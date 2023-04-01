@@ -15,7 +15,7 @@ return {
     }
 
     local function theme_icon()
-      return ""
+      return "^ᴖﻌᴖ^"
     end
 
     require("lualine").setup({
