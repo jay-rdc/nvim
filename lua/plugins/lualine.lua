@@ -95,6 +95,9 @@ return {
         lualine_y = {},
         lualine_z = {},
       },
+      extensions = {
+        "quickfix",
+      },
     })
   end
 }
