@@ -70,13 +70,7 @@ return {
         lualine_z = {},
       },
       inactive_sections = {
-        lualine_a = {
-          theme_icon_component("inactive"),
-          {
-            "FugitiveHead",
-            icon = "󰘬",
-          },
-        },
+        lualine_a = {},
         lualine_b = {
           {
             "filetype",
