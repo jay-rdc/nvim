@@ -10,7 +10,6 @@ return {
         CopilotSuggestion = { link = "Comment" },
         LineNr = { fg = colors.surface2 },
         StatusLineThemeIcon = { fg = colors.crust, bg = colors.pink },
-        StatusLineThemeIconNC = { fg = colors.crust, bg = colors.overlay0 },
         StatusLineSectionA = { fg = colors.pink, bg = colors.surface0 },
         StatusLineSectionB = { fg = colors.pink, bg = colors.base },
         StatusLineSectionANC = { fg = colors.overlay0, bg = colors.surface0 },

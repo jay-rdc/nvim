@@ -21,11 +21,10 @@ return {
       return colorscheme_icons[vim.g.colors_name] or ""
     end
 
-    local function theme_icon_component(state)
-      local color = state == "inactive" and "StatusLineThemeIconNC" or "StatusLineThemeIcon"
+    local function theme_icon_component()
       return {
         theme_icon,
-        color = color,
+        color = "StatusLineThemeIcon",
         separator = { left = "", right = "" },
         padding = 0,
       }
