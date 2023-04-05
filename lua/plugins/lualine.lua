@@ -15,7 +15,20 @@ return {
     }
 
     local function theme_icon()
-      return "^ᴖﻌᴖ^"
+      local colorscheme_icons = {
+        catppuccin = "^ᴖﻌᴖ^",
+      }
+      return colorscheme_icons[vim.g.colors_name] or ""
+    end
+
+    local function theme_icon_component(state)
+      local color = state == "inactive" and "StatusLineThemeIconNC" or "StatusLineThemeIcon"
+      return {
+        theme_icon,
+        color = color,
+        separator = { left = "", right = "" },
+        padding = 0,
+      }
     end
 
     require("lualine").setup({
@@ -29,12 +42,7 @@ return {
       },
       sections = {
         lualine_a = {
-          {
-            theme_icon,
-            color = "StatusLineThemeIcon",
-            separator = { left = "", right = "" },
-            padding = 0,
-          },
+          theme_icon_component(),
           {
             "FugitiveHead",
             icon = "󰘬",
@@ -63,12 +71,7 @@ return {
       },
       inactive_sections = {
         lualine_a = {
-          {
-            theme_icon,
-            color = "StatusLineThemeIconNC",
-            separator = { left = "", right = "" },
-            padding = 0,
-          },
+          theme_icon_component("inactive"),
           {
             "FugitiveHead",
             icon = "󰘬",
