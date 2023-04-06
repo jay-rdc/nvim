@@ -23,7 +23,7 @@ vim.opt.updatetime = 50
 
 vim.opt.signcolumn = "yes"
 
-if (vim.fn.has("wsl")) then
+if (vim.fn.has("wsl") == 1) then
   vim.g.clipboard = {
     name = "wsl-clipboard",
     copy = {
