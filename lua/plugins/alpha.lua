@@ -50,34 +50,34 @@ return {
 
     local find_tool = {
       type = "group",
+      position = "center",
       val = {
         { type = "text", val = "Find Tool (Telescope)", opts = { hl = "Conceal", position = "center" } },
         custom_button("SPC fd", "󰱼  Find File"),
         custom_button("SPC fw", "󰈬  Find Word"),
         custom_button("SPC fg", "󰊢  Find Git Files"),
       },
-      position = "center",
     }
 
     local other_tools = {
       type = "group",
+      position = "center",
       val = {
         { type = "text", val = "Other Tools", opts = { hl = "Conceal", position = "center" } },
         custom_button("SPC mo", "󰸕  Bookmark Menu (Harpoon)"),
         custom_button("SPC lz", "󰒲  Plugins Dashboard (Lazy)"),
         custom_button("SPC msn", "󰟾  LSP Dashboard (Mason)"),
       },
-      position = "center",
     }
 
     local misc = {
       type = "group",
+      position = "center",
       val = {
         { type = "text", val = "Misc", opts = { hl = "Conceal", position = "center" } },
         custom_button("e", "󰝒  New File", "<cmd>ene<CR>"),
         custom_button("Restart computer", "󰍃  Quit", ""),
       },
-      position = "center",
     }
 
     dashboard.config.layout = {
