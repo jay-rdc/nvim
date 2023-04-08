@@ -42,7 +42,8 @@ return {
       }
     end
 
-    local function adjust_button(button)
+    local function custom_button(shortcut, text, keybind, keybind_opts)
+      local button = dashboard.button(shortcut, text, keybind, keybind_opts)
       button.opts.cursor = 6
       return button
     end
@@ -51,9 +52,9 @@ return {
       type = "group",
       val = {
         { type = "text", val = "Find Tool (Telescope)", opts = { hl = "Conceal", position = "center" } },
-        adjust_button(dashboard.button("SPC fd", "󰱼  Find File")),
-        adjust_button(dashboard.button("SPC fw", "󰈬  Find Word")),
-        adjust_button(dashboard.button("SPC fg", "󰊢  Find Git Files")),
+        custom_button("SPC fd", "󰱼  Find File"),
+        custom_button("SPC fw", "󰈬  Find Word"),
+        custom_button("SPC fg", "󰊢  Find Git Files"),
       },
       position = "center",
     }
@@ -62,9 +63,9 @@ return {
       type = "group",
       val = {
         { type = "text", val = "Other Tools", opts = { hl = "Conceal", position = "center" } },
-        adjust_button(dashboard.button("SPC mo", "󰸕  Bookmark Menu (Harpoon)")),
-        adjust_button(dashboard.button("SPC lz", "󰒲  Plugins Dashboard (Lazy)")),
-        adjust_button(dashboard.button("SPC msn", "󰟾  LSP Dashboard (Mason)")),
+        custom_button("SPC mo", "󰸕  Bookmark Menu (Harpoon)"),
+        custom_button("SPC lz", "󰒲  Plugins Dashboard (Lazy)"),
+        custom_button("SPC msn", "󰟾  LSP Dashboard (Mason)"),
       },
       position = "center",
     }
@@ -73,8 +74,8 @@ return {
       type = "group",
       val = {
         { type = "text", val = "Misc", opts = { hl = "Conceal", position = "center" } },
-        adjust_button(dashboard.button("e", "󰝒  New File", "<cmd>ene<CR>")),
-        adjust_button(dashboard.button("Restart computer", "󰍃  Quit", "")),
+        custom_button("e", "󰝒  New File", "<cmd>ene<CR>"),
+        custom_button("Restart computer", "󰍃  Quit", ""),
       },
       position = "center",
     }
