@@ -64,7 +64,7 @@ return {
         { type = "text", val = "Other Tools", opts = { hl = "Conceal", position = "center" } },
         adjust_button(dashboard.button("SPC mo", "󰸕  Bookmark Menu (Harpoon)")),
         adjust_button(dashboard.button("SPC lz", "󰒲  Plugins Dashboard (Lazy)")),
-        adjust_button(dashboard.button("SPC msn", "󱊈  LSP Dashboard (Mason)")),
+        adjust_button(dashboard.button("SPC msn", "󰟾  LSP Dashboard (Mason)")),
       },
       position = "center",
     }
