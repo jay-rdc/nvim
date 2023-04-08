@@ -64,7 +64,7 @@ return {
       position = "center",
       val = {
         { type = "text", val = "Other Tools", opts = { hl = "Conceal", position = "center" } },
-        custom_button("SPC mo", "󰸕  Bookmark Menu (Harpoon)"),
+        custom_button("SPC mo", "󰛢  Bookmark Menu (Harpoon)"),
         custom_button("SPC lz", "󰒲  Plugins Dashboard (Lazy)"),
         custom_button("SPC msn", "󰟾  LSP Dashboard (Mason)"),
       },
