@@ -51,7 +51,7 @@ return {
       type = "group",
       val = {
         { type = "text", val = "Find Tool (Telescope)", opts = { hl = "Conceal", position = "center" } },
-        adjust_button(dashboard.button("SPC fd", "󰈙  Find Files")),
+        adjust_button(dashboard.button("SPC fd", "󰱼  Find File")),
         adjust_button(dashboard.button("SPC fw", "󰈬  Find Word")),
         adjust_button(dashboard.button("SPC fg", "󰊢  Find Git Files")),
       },
