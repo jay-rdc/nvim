@@ -26,7 +26,7 @@ return {
     local function info()
       local date = os.date("󰸘 %A - %B %d, %Y")
       local lazy_stats = require("lazy").stats()
-      local loaded_plugins = "󰂖 " .. lazy_stats.count .. " plugins"
+      local loaded_plugins = "󰢻 " .. lazy_stats.count .. " plugins"
       local version = vim.version()
       local nvim_version_info = "󰓼 v" .. version.major .. "." .. version.minor .. "." .. version.patch
 
