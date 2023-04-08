@@ -75,7 +75,7 @@ return {
             "filetype",
             colored = false,
             icon_only = true,
-            separator = "",
+            separator = { left = "" },
             padding = { left = 1, right = 0 },
           },
           {
