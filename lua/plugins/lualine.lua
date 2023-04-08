@@ -35,9 +35,8 @@ return {
         theme = custom_theme,
         component_separators = "|",
         section_separators = { left = "", right = "" },
-        refresh = {
-          statusline = 100,
-        },
+        refresh = { statusline = 100 },
+        disabled_filetypes = { statusline = { "alpha" } },
       },
       sections = {
         lualine_a = {
