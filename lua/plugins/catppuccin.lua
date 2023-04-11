@@ -8,7 +8,9 @@ return {
     custom_highlights = function(colors)
       return {
         CopilotSuggestion = { link = "Comment" },
-        LineNr = { fg = colors.surface2 },
+        LineNr = { fg = colors.blue },
+        LineNrAbove = { fg = colors.surface2 },
+        LineNrBelow = { fg = colors.surface2 },
         StatusLineThemeIcon = { fg = colors.crust, bg = colors.pink },
         StatusLineSectionA = { fg = colors.pink, bg = colors.surface0 },
         StatusLineSectionB = { fg = colors.pink, bg = colors.base },
