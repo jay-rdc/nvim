@@ -26,6 +26,4 @@ vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz", { desc = "Go to previous quickf
 vim.keymap.set("n", "[b", vim.cmd.bprev, { desc = "Switch to previous buffer" })
 vim.keymap.set("n", "]b", vim.cmd.bnext, { desc = "Switch to next buffer" })
 
-vim.keymap.set("n", [[<leader>\\]], "<cmd>e ++ff=dos<CR>", { desc = "Change line ending of current file to CRLF"})
-
 vim.keymap.set("v", "<leader>gab", [[:g/^<\{7}\|^|\{7}\|^=\{7}\|^>\{7}/d<CR>]], { desc = "Git merge conflict: Accept both changes" })
