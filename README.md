@@ -1,6 +1,5 @@
 ## Neovim config using [lazy](https://github.com/folke/lazy.nvim) as package manager
 ### Pre-requisites:
-- [git](https://git-scm.com)
 - [neovim](https://neovim.io/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [fd](https://github.com/sharkdp/fd)
