@@ -1,4 +1,4 @@
-## Neovim config using lazy as package manager
+## Neovim config using [lazy](https://github.com/folke/lazy.nvim) as package manager
 ### Pre-requisites:
 - [git](https://git-scm.com)
 - [neovim](https://neovim.io/)
