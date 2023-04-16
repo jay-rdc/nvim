@@ -1,8 +1,10 @@
 ## Neovim config using lazy as package manager
 ### Pre-requisites:
+- [git](https://git-scm.com)
 - [neovim](https://neovim.io/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [fd](https://github.com/sharkdp/fd)
+- [nodejs](https://nodejs.org)
 - a C and C++ compiler (`gcc` or `llvm`)
 
 #### *Extra requirements for Windows:*
