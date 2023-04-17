@@ -28,6 +28,7 @@ return {
             ["<C-p>"] = action_layout.toggle_preview,
             ["<C-j>"] = action.move_selection_next,
             ["<C-k>"] = action.move_selection_previous,
+            ["<C-u>"] = false,
             ["<C-n>"] = false,
           },
         },
