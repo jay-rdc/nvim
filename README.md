@@ -4,7 +4,7 @@
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [fd](https://github.com/sharkdp/fd)
 - [nodejs](https://nodejs.org)
-- a C and C++ compiler (`gcc` or `llvm`)
+- a C compiler (`gcc` or `llvm`) and libstdc++
 
 #### *Extra requirements for Windows:*
 - [scoop](https://scoop.sh/)
