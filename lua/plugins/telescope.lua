@@ -22,12 +22,13 @@ return {
         selection_caret = "󱞪 ",
         mappings = {
           n = {
-            ["<M-p>"] = action_layout.toggle_preview,
+            ["<C-p>"] = action_layout.toggle_preview,
           },
           i = {
-            ["<M-p>"] = action_layout.toggle_preview,
+            ["<C-p>"] = action_layout.toggle_preview,
             ["<C-j>"] = action.move_selection_next,
             ["<C-k>"] = action.move_selection_previous,
+            ["<C-n>"] = false,
           },
         },
       },
