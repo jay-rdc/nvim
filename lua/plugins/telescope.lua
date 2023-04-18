@@ -10,7 +10,6 @@ return {
     local action = require("telescope.actions")
     local action_layout = require("telescope.actions.layout")
 
-    require("telescope").load_extension("file_browser")
     require("telescope").setup({
       defaults = {
         layout_config = {
@@ -38,6 +37,7 @@ return {
         },
       },
     })
+    require("telescope").load_extension("file_browser")
 
     vim.keymap.set("n", "<leader>e", "<cmd>Telescope file_browser path=%:h default_selection_index=2<CR>", { desc = "Telescope: File browser" })
     vim.keymap.set("n", "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope: Find in current file" })
