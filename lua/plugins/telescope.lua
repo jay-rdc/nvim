@@ -42,7 +42,11 @@ return {
           path = "%:h",
           default_selection_index = 2,
           mappings = {
+            n = {
+              t = fb_action.toggle_hidden,
+            },
             i = {
+              ["<C-t>"] = fb_action.toggle_hidden,
               ["<C-b>"] = fb_action.toggle_browser,
               ["<C-h>"] = fb_action.goto_parent_dir,
               ["<C-l>"] = action.select_default,
