@@ -39,7 +39,7 @@ return {
       },
     })
 
-    vim.keymap.set("n", "<leader>e", "<cmd>Telescope file_browser path=%:h<CR>", { desc = "Telescope: File browser" })
+    vim.keymap.set("n", "<leader>e", "<cmd>Telescope file_browser path=%:h default_selection_index=2<CR>", { desc = "Telescope: File browser" })
     vim.keymap.set("n", "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope: Find in current file" })
     vim.keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "Telescope: Find word" })
     vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Telescope: Find help tags" })
