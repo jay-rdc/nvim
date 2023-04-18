@@ -9,6 +9,7 @@ return {
   config = function()
     local action = require("telescope.actions")
     local action_layout = require("telescope.actions.layout")
+    local fb_action = require("telescope").extensions.file_browser.actions
 
     require("telescope").setup({
       defaults = {
@@ -33,6 +34,18 @@ return {
             ["<C-f>"] = action.preview_scrolling_up,
             ["<C-u>"] = false,
             ["<C-n>"] = false,
+          },
+        },
+      },
+      extensions = {
+        file_browser = {
+          mappings = {
+            i = {
+              ["<C-b>"] = fb_action.toggle_browser,
+              ["<C-h>"] = fb_action.goto_parent_dir,
+              ["<C-l>"] = action.select_default,
+              ["<bs>"] = false,
+            },
           },
         },
       },
