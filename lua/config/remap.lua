@@ -1,7 +1,5 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "Explore netrw" })
-
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line below without moving cursor" })
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Go down half a page then center cursor" })
