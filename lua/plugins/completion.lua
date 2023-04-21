@@ -71,7 +71,7 @@ return {
         ["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
         ["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
         ["<C-d>"] = cmp.mapping.scroll_docs(4),
-        ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(-4),
         ["<C-y>"] = cmp.mapping.confirm({ select = false }),
         ["<C-h>"] = cmp.mapping(function(fallback)
           if luasnip.jumpable(-1) then
