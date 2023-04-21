@@ -40,7 +40,6 @@ return {
       extensions = {
         file_browser = {
           path = "%:h",
-          default_selection_index = 2,
           mappings = {
             n = {
               t = fb_action.toggle_hidden,
