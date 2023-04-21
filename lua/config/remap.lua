@@ -26,3 +26,4 @@ vim.keymap.set("v", "<leader>gab", [[:g/^<\{7}\|^|\{7}\|^=\{7}\|^>\{7}/d<CR>]], 
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "<C-z>", "<nop>")
