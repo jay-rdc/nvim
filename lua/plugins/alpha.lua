@@ -23,7 +23,7 @@ return {
     }
 
     local function info()
-      local date = os.date("󰸘 %A - %B %d, %Y")
+      local date = os.date("󰸘 %B %d, %Y")
       local lazy_stats = require("lazy").stats()
       local loaded_plugins = "󰢻 " .. lazy_stats.count .. " plugins"
       local version = vim.version()
@@ -41,55 +41,90 @@ return {
       }
     end
 
-    local function custom_button(shortcut, text, keybind, keybind_opts)
-      local button = dashboard.button(shortcut, text, keybind, keybind_opts)
-      button.opts.cursor = 6
-      return button
+    local function day_banner()
+      local day = os.date("%A")
+      local day_banners = {
+        Sunday = {
+          [[  ______                 _             ]],
+          [[ / _____)               | |            ]],
+          [[( (____  _   _ ____   __| |_____ _   _ ]],
+          [[ \____ \| | | |  _ \ / _  (____ | | | |]],
+          [[ _____) ) |_| | | | ( (_| / ___ | |_| |]],
+          [[(______/|____/|_| |_|\____\_____|\__  |]],
+          [[                                (____/ ]],
+        },
+        Monday = {
+          [[ _______                 _             ]],
+          [[(_______)               | |            ]],
+          [[ _  _  _  ___  ____   __| |_____ _   _ ]],
+          [[| ||_|| |/ _ \|  _ \ / _  (____ | | | |]],
+          [[| |   | | |_| | | | ( (_| / ___ | |_| |]],
+          [[|_|   |_|\___/|_| |_|\____\_____|\__  |]],
+          [[                                (____/ ]],
+        },
+        Tuesday = {
+          [[ _______                   _             ]],
+          [[(_______)                 | |            ]],
+          [[    _ _   _ _____  ___  __| |_____ _   _ ]],
+          [[   | | | | | ___ |/___)/ _  (____ | | | |]],
+          [[   | | |_| | ____|___ ( (_| / ___ | |_| |]],
+          [[   |_|____/|_____|___/ \____\_____|\__  |]],
+          [[                                  (____/ ]],
+        },
+        Wednesday = {
+          [[ _  _  _           _                      _             ]],
+          [[(_)(_)(_)         | |                    | |            ]],
+          [[ _  _  _ _____  __| |____  _____  ___  __| |_____ _   _ ]],
+          [[| || || | ___ |/ _  |  _ \| ___ |/___)/ _  (____ | | | |]],
+          [[| || || | ____( (_| | | | | ____|___ ( (_| / ___ | |_| |]],
+          [[ \_____/|_____)\____|_| |_|_____|___/ \____\_____|\__  |]],
+          [[                                                 (____/ ]],
+        },
+        Thursday = {
+          [[ _______ _                         _             ]],
+          [[(_______) |                       | |            ]],
+          [[    _   | |__  _   _  ____ ___  __| |_____ _   _ ]],
+          [[   | |  |  _ \| | | |/ ___)___)/ _  (____ | | | |]],
+          [[   | |  | | | | |_| | |  |___ ( (_| / ___ | |_| |]],
+          [[   |_|  |_| |_|____/|_|  (___/ \____\_____|\__  |]],
+          [[                                          (____/ ]],
+        },
+        Friday = {
+          [[ _______    _     _             ]],
+          [[(_______)  (_)   | |            ]],
+          [[ _____ ____ _  __| |_____ _   _ ]],
+          [[|  ___) ___) |/ _  (____ | | | |]],
+          [[| |  | |   | ( (_| / ___ | |_| |]],
+          [[|_|  |_|   |_|\____\_____|\__  |]],
+          [[                         (____/ ]],
+        },
+        Saturday = {
+          [[  ______                            _             ]],
+          [[ / _____)        _                 | |            ]],
+          [[( (____  _____ _| |_ _   _  ____ __| |_____ _   _ ]],
+          [[ \____ \(____ (_   _) | | |/ ___) _  (____ | | | |]],
+          [[ _____) ) ___ | | |_| |_| | |  ( (_| / ___ | |_| |]],
+          [[(______/\_____|  \__)____/|_|   \____\_____|\__  |]],
+          [[                                           (____/ ]],
+        },
+      }
+      return {
+        type = "text",
+        val = day_banners[day],
+        opts = {
+          position = "center",
+          hl = "Type",
+        },
+      }
     end
-
-    local find_tool = {
-      type = "group",
-      position = "center",
-      val = {
-        { type = "text", val = "Find Tool (Telescope)", opts = { hl = "Conceal", position = "center" } },
-        custom_button("SPC fd", "󰱼  Find File"),
-        custom_button("SPC fw", "󰈬  Find Word"),
-        custom_button("SPC fg", "󰊢  Find Git Files"),
-      },
-    }
-
-    local other_tools = {
-      type = "group",
-      position = "center",
-      val = {
-        { type = "text", val = "Other Tools", opts = { hl = "Conceal", position = "center" } },
-        custom_button("SPC mo", "󰛢  Bookmark Menu (Harpoon)"),
-        custom_button("SPC lz", "󰒲  Plugins Dashboard (Lazy)"),
-        custom_button("SPC msn", "󰟾  LSP Dashboard (Mason)"),
-      },
-    }
-
-    local misc = {
-      type = "group",
-      position = "center",
-      val = {
-        { type = "text", val = "Misc", opts = { hl = "Conceal", position = "center" } },
-        custom_button("e", "󰝒  New File", "<cmd>ene<CR>"),
-        custom_button("Restart computer", "󰍃  Quit", ""),
-      },
-    }
 
     dashboard.config.layout = {
       { type = "padding", val = 4 },
       header,
       { type = "padding", val = 1 },
       info(),
-      { type = "padding", val = 2 },
-      find_tool,
-      { type = "padding", val = 2 },
-      other_tools,
-      { type = "padding", val = 2 },
-      misc,
+      { type = "padding", val = 3 },
+      day_banner(),
     }
 
     alpha.setup(dashboard.config)
