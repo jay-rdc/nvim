@@ -1,4 +1,4 @@
-## Neovim config using [lazy](https://github.com/folke/lazy.nvim) as package manager
+## Neovim config using [lazy](https://github.com/folke/lazy.nvim) package manager
 ### Pre-requisites:
 - [neovim](https://neovim.io/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
