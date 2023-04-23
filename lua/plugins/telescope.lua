@@ -15,7 +15,7 @@ return {
       defaults = {
         layout_config = {
           center = {
-            preview_cutoff = 30,
+            preview_cutoff = 0,
           },
         },
         layout_strategy = "center",
