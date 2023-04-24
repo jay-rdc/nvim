@@ -74,18 +74,18 @@ return {
       end
 
       -- LSP Actions
-      vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts("LSP: Go to definition"))
-      vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts("LSP: Hover"))
-      vim.keymap.set("n", "<leader>a", function() vim.lsp.buf.code_action() end, opts("LSP: Code action"))
-      vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts("LSP: Rename"))
-      vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.references() end, opts("LSP: References"))
-      vim.keymap.set({ "n", "v" }, "<leader>=", function() vim.lsp.buf.format() end, opts("LSP: Format"))
+      vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts("LSP: Go to definition"))
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, opts("LSP: Hover"))
+      vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, opts("LSP: Code action"))
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts("LSP: Rename"))
+      vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, opts("LSP: References"))
+      vim.keymap.set({ "n", "v" }, "<leader>=", vim.lsp.buf.format, opts("LSP: Format"))
 
       -- Diagnostics
-      vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts("Diagnostics: Go to previous diagnostic"))
-      vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts("Diagnostics: Go to next diagnostic"))
-      vim.keymap.set("n", "<leader>df", function() vim.diagnostic.open_float() end, opts("Diagnostics: Open float"))
-      vim.keymap.set("n", "<leader>dq", function() vim.diagnostic.setqflist() end, opts("Diagnostics: Set quickfix list"))
+      vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts("Diagnostics: Go to previous diagnostic"))
+      vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts("Diagnostics: Go to next diagnostic"))
+      vim.keymap.set("n", "<leader>df", vim.diagnostic.open_float, opts("Diagnostics: Open float"))
+      vim.keymap.set("n", "<leader>dq", vim.diagnostic.setqflist, opts("Diagnostics: Set quickfix list"))
     end
 
     local lspconfig = require("lspconfig")
