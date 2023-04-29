@@ -16,7 +16,7 @@ return {
 
     local function theme_icon()
       local colorscheme_icons = {
-        catppuccin = "^ᴖﻌᴖ^",
+        ["catppuccin-mocha"] = "^ᴖﻌᴖ^",
       }
       return colorscheme_icons[vim.g.colors_name] or ""
     end
