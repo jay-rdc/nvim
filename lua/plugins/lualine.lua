@@ -43,7 +43,7 @@ return {
           theme_icon_component(),
           {
             "FugitiveHead",
-            icon = "󰘬",
+            icon = "",
           },
         },
         lualine_b = {
@@ -60,6 +60,12 @@ return {
           {
             "diagnostics",
             sources = { "nvim_diagnostic" },
+            symbols = {
+              error = " ",
+              warn = " ",
+              hint = " ",
+              info = " "
+            },
           },
         },
         lualine_c = {},
@@ -83,6 +89,12 @@ return {
           {
             "diagnostics",
             sources = { "nvim_diagnostic" },
+            symbols = {
+              error = " ",
+              warn = " ",
+              hint = " ",
+              info = " "
+            },
           },
         },
         lualine_c = {},

@@ -21,8 +21,8 @@ return {
         layout_strategy = "center",
         sorting_strategy = "ascending",
         preview = { hide_on_startup = true },
-        prompt_prefix = " ",
-        selection_caret = "󱞪 ",
+        prompt_prefix = " ",
+        selection_caret = " ",
         mappings = {
           n = {
             ["<C-p>"] = action_layout.toggle_preview,
