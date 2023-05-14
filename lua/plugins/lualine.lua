@@ -13,17 +13,10 @@ return {
       }
     }
 
-    local function theme_icon()
-      local colorscheme_icons = {
-        ["catppuccin-mocha"] = "^ᴖﻌᴖ^",
-      }
-      return colorscheme_icons[vim.g.colors_name] or ""
-    end
-
-    local function theme_icon_component()
+    local function active_indicator()
       return {
-        theme_icon,
-        color = "StatusLineThemeIcon",
+        function() return " " end,
+        color = "StatusLineActiveIndicator",
         separator = { left = "", right = "" },
         padding = 0,
       }
@@ -39,7 +32,7 @@ return {
       },
       sections = {
         lualine_a = {
-          theme_icon_component(),
+          active_indicator(),
           {
             "FugitiveHead",
             icon = "",

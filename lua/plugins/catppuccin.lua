@@ -11,7 +11,7 @@ return {
         LineNr = { fg = colors.blue },
         LineNrAbove = { fg = colors.surface2 },
         LineNrBelow = { fg = colors.surface2 },
-        StatusLineThemeIcon = { fg = colors.crust, bg = colors.pink },
+        StatusLineActiveIndicator = { fg = colors.crust, bg = colors.pink },
         StatusLineSectionA = { fg = colors.pink, bg = colors.surface0 },
         StatusLineSectionB = { fg = colors.pink, bg = colors.base },
         StatusLineSectionANC = { fg = colors.overlay0, bg = colors.surface0 },
