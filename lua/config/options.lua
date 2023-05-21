@@ -23,7 +23,8 @@ vim.opt.updatetime = 50
 
 vim.opt.signcolumn = "yes"
 
-if (vim.fn.has("wsl") == 1) then
+local has_tmux = vim.fn.has_key(vim.fn.environ(), "TMUX") == 1
+if (vim.fn.has("wsl") == 1 and not has_tmux) then
   vim.g.clipboard = {
     name = "wsl-clipboard",
     copy = {
