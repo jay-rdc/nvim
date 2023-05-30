@@ -23,6 +23,8 @@ vim.opt.updatetime = 50
 
 vim.opt.signcolumn = "yes"
 
+vim.opt.splitright = true
+
 local has_wsl = vim.fn.has("wsl") == 1
 local has_tmux = vim.fn.has_key(vim.fn.environ(), "TMUX") == 1
 if (has_wsl and not has_tmux) then
