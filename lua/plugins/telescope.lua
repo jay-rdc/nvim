@@ -4,11 +4,13 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
+    "nvim-telescope/telescope-ui-select.nvim",
   },
   config = function()
     local action = require("telescope.actions")
     local action_layout = require("telescope.actions.layout")
     local fb_action = require("telescope").extensions.file_browser.actions
+    local themes = require("telescope.themes")
 
     require("telescope").setup({
       defaults = {
@@ -52,9 +54,13 @@ return {
             },
           },
         },
+        ["ui-select"] = {
+          themes.get_cursor(),
+        },
       },
     })
     require("telescope").load_extension("file_browser")
+    require("telescope").load_extension("ui-select")
 
     vim.keymap.set("n", "<leader>e", "<cmd>Telescope file_browser<CR>", { desc = "Telescope: File browser" })
     vim.keymap.set("n", "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope: Find in current file" })
