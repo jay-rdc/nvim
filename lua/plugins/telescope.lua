@@ -11,6 +11,7 @@ return {
     local action_layout = require("telescope.actions.layout")
     local fb_action = require("telescope").extensions.file_browser.actions
     local themes = require("telescope.themes")
+    local builtin = require("telescope.builtin")
 
     require("telescope").setup({
       defaults = {
@@ -66,7 +67,10 @@ return {
     vim.keymap.set("n", "<leader>fc", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope: Find in current file" })
     vim.keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { desc = "Telescope: Find word" })
     vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Telescope: Find help tags" })
-    vim.keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<CR>", { desc = "Telescope: Find git files" })
-    vim.keymap.set("n", "<leader>fd", "<cmd>Telescope find_files<CR>", { desc = "Telescope: Find files" })
+    vim.keymap.set("n", "<leader>fd", function()
+      if not pcall(builtin.git_files) then
+        builtin.find_files()
+      end
+    end, { desc = "Telescope: Find files" })
   end
 }
