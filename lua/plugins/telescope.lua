@@ -69,7 +69,11 @@ return {
     vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Telescope: Find word" })
     vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope: Find help tags" })
     vim.keymap.set("n", "<leader>fd", function()
-      if not pcall(builtin.git_files) then
+      local opts = {
+        show_untracked = true,
+      }
+
+      if not pcall(builtin.git_files, opts) then
         builtin.find_files()
       end
     end, { desc = "Telescope: Find files" })
