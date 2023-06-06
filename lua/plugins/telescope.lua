@@ -7,10 +7,10 @@ return {
     "nvim-telescope/telescope-ui-select.nvim",
   },
   config = function()
-    local action = require("telescope.actions")
-    local action_layout = require("telescope.actions.layout")
+    local actions = require("telescope.actions")
+    local actions_layout = require("telescope.actions.layout")
     local fb_extension = require("telescope").extensions.file_browser
-    local fb_action = fb_extension.actions
+    local fb_actions = fb_extension.actions
     local themes = require("telescope.themes")
     local builtin = require("telescope.builtin")
 
@@ -28,13 +28,13 @@ return {
         selection_caret = " ",
         mappings = {
           n = {
-            ["<C-p>"] = action_layout.toggle_preview,
+            ["<C-p>"] = actions_layout.toggle_preview,
           },
           i = {
-            ["<C-p>"] = action_layout.toggle_preview,
-            ["<C-j>"] = action.move_selection_next,
-            ["<C-k>"] = action.move_selection_previous,
-            ["<C-f>"] = action.preview_scrolling_up,
+            ["<C-p>"] = actions_layout.toggle_preview,
+            ["<C-j>"] = actions.move_selection_next,
+            ["<C-k>"] = actions.move_selection_previous,
+            ["<C-f>"] = actions.preview_scrolling_up,
             ["<C-u>"] = false,
             ["<C-n>"] = false,
           },
@@ -45,13 +45,13 @@ return {
           path = "%:h",
           mappings = {
             n = {
-              t = fb_action.toggle_hidden,
+              t = fb_actions.toggle_hidden,
             },
             i = {
-              ["<C-t>"] = fb_action.toggle_hidden,
-              ["<C-b>"] = fb_action.toggle_browser,
-              ["<C-h>"] = fb_action.goto_parent_dir,
-              ["<C-l>"] = action.select_default,
+              ["<C-t>"] = fb_actions.toggle_hidden,
+              ["<C-b>"] = fb_actions.toggle_browser,
+              ["<C-h>"] = fb_actions.goto_parent_dir,
+              ["<C-l>"] = actions.select_default,
               ["<bs>"] = false,
             },
           },
