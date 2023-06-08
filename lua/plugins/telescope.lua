@@ -27,10 +27,8 @@ return {
         prompt_prefix = " ",
         selection_caret = " ",
         mappings = {
-          n = {
-            ["<C-p>"] = actions_layout.toggle_preview,
-          },
           i = {
+            ["<Esc>"] = actions.close,
             ["<C-p>"] = actions_layout.toggle_preview,
             ["<C-j>"] = actions.move_selection_next,
             ["<C-k>"] = actions.move_selection_previous,
