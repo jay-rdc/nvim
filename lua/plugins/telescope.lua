@@ -29,12 +29,9 @@ return {
         mappings = {
           i = {
             ["<Esc>"] = actions.close,
-            ["<C-p>"] = actions_layout.toggle_preview,
-            ["<C-j>"] = actions.move_selection_next,
-            ["<C-k>"] = actions.move_selection_previous,
+            ["<A-p>"] = actions_layout.toggle_preview,
             ["<C-f>"] = actions.preview_scrolling_up,
             ["<C-u>"] = false,
-            ["<C-n>"] = false,
           },
         },
       },
