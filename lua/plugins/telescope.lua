@@ -39,15 +39,8 @@ return {
         file_browser = {
           path = "%:h",
           mappings = {
-            n = {
-              t = fb_actions.toggle_hidden,
-            },
             i = {
-              ["<C-t>"] = fb_actions.toggle_hidden,
               ["<C-b>"] = fb_actions.toggle_browser,
-              ["<C-h>"] = fb_actions.goto_parent_dir,
-              ["<C-l>"] = actions.select_default,
-              ["<bs>"] = false,
             },
           },
         },
