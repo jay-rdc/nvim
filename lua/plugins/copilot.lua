@@ -6,7 +6,7 @@ return {
       text = false,
     }
     vim.keymap.set("i", "<Tab>", "<Tab>")
-    vim.api.nvim_set_keymap("i", "<C-j>", [[copilot#Accept("<Right>")]], { expr = true, silent = true, desc = "Copilot: Accept" })
+    vim.api.nvim_set_keymap("i", "<C-j>", [[copilot#Accept("<C-j>")]], { expr = true, silent = true, desc = "Copilot: Accept" })
 
     vim.g.copilot_no_tab_map = true
   end
