@@ -18,6 +18,7 @@ return require("lazy").setup("plugins", {
     border = "rounded",
     icons = {
       lazy = " ",
+      require = " ",
     },
   },
 })
