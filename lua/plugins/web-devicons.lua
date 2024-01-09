@@ -8,6 +8,12 @@ return {
         icon = "",
         name = "Txt"
       },
+      js = {
+        color = "#F1F134",
+        cterm_color = "227",
+        icon = "",
+        name = "Js"
+      },
     },
   },
 }
