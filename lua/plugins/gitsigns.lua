@@ -12,13 +12,13 @@ return {
 
       map("n", "]c", function()
         if vim.wo.diff then return "]c" end
-        vim.schedule(function() gs.next_hunk() end)
+        vim.schedule(function() gs.nav_hunk("next") end)
         return "<Ignore>"
       end, { expr = true, desc = "Gitsigns: Jump to next hunk" })
 
       map("n", "[c", function()
         if vim.wo.diff then return "[c" end
-        vim.schedule(function() gs.prev_hunk() end)
+        vim.schedule(function() gs.nav_hunk("prev") end)
         return "<Ignore>"
       end, { expr = true, desc = "Gitsigns: Jump to previous hunk" })
 
