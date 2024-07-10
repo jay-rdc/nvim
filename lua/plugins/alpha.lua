@@ -4,6 +4,7 @@ return {
     local alpha = require("alpha")
     local dashboard = require("alpha.themes.dashboard")
 
+    -- ANSI shadow ASCII art style
     local header_text = {
       [[███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗]],
       [[████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║]],
@@ -43,6 +44,7 @@ return {
 
     local function day_banner()
       local day = os.date("%A")
+      -- Larry 3D ASCII art style
       local day_banners = {
         Sunday = {
           [[ ____                        __                        ]],
