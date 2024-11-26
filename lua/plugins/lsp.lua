@@ -56,6 +56,7 @@ return {
 
     require("mason-lspconfig").setup({
       ensure_installed = {
+        "angularls",
         "cssls",
         "eslint",
         "html",
@@ -88,6 +89,7 @@ return {
     end
 
     local lspconfig = require("lspconfig")
+    local util = require("lspconfig.util")
     require("mason-lspconfig").setup_handlers({
       function(server_name)
         lspconfig[server_name].setup({
@@ -121,6 +123,13 @@ return {
           },
           on_attach = lsp_attach,
           capabilities = lsp_capabilities,
+        })
+      end,
+      ["angularls"] = function()
+        lspconfig.angularls.setup({
+          on_attach = lsp_attach,
+          capabilities = lsp_capabilities,
+          root_dir = util.root_pattern("angular.json", "project.json")
         })
       end,
     })
