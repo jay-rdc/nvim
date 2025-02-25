@@ -24,6 +24,8 @@ vim.keymap.set("n", "]b", vim.cmd.bnext, { desc = "Switch to next buffer" })
 
 vim.keymap.set("v", "<leader>gab", [[:g/^<\{7}\|^=\{7}\|^>\{7}/d<CR>]], { desc = "Git merge conflict: Accept both changes" })
 
+vim.keymap.set("n", "<leader>bd", "<cmd>%bd<CR><C-o><cmd>bd#<CR>", { desc = "Delete all buffers excluding the current buffer" })
+
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-z>", "<nop>")
