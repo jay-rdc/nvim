@@ -1,27 +1,21 @@
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
+    { "mason-org/mason.nvim", version = "1.11.0" },
+    { "mason-org/mason-lspconfig.nvim", version = "1.32.0" },
   },
   config = function()
-    -- LSP and Diagnostics Settings
-    local sign = function(opts)
-      vim.fn.sign_define(opts.name, {
-        texthl = opts.name,
-        text = opts.text,
-        numhl = "",
-      })
-    end
-
-    sign({ name = "DiagnosticSignError", text = "" })
-    sign({ name = "DiagnosticSignWarn", text = "" })
-    sign({ name = "DiagnosticSignHint", text = "" })
-    sign({ name = "DiagnosticSignInfo", text = "" })
-
+    -- Diagnostics Settings
     vim.diagnostic.config({
       virtual_text = true,
-      signs = true,
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = "",
+          [vim.diagnostic.severity.WARN] = "",
+          [vim.diagnostic.severity.HINT] = "",
+          [vim.diagnostic.severity.INFO] = "",
+        },
+      },
       update_in_insert = false,
       underline = true,
       severity_sort = true,
@@ -34,11 +28,6 @@ return {
         prefix = "",
       },
     })
-
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-      vim.lsp.handlers.hover,
-      { border = "rounded", }
-    )
 
     -- Mason Dashboard
     require("mason").setup({
@@ -58,6 +47,7 @@ return {
       ensure_installed = {
         "angularls",
         "cssls",
+        "emmet_language_server",
         "eslint",
         "html",
         "jsonls",
@@ -73,9 +63,15 @@ return {
         return { buffer = bufnr, remap = false, desc = desc or "" }
       end
 
+      local function custom_hover()
+        vim.lsp.buf.hover({
+          border = "rounded"
+        })
+      end
+
       -- LSP Actions
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts("LSP: Go to definition"))
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, opts("LSP: Hover"))
+      vim.keymap.set("n", "K", custom_hover, opts("LSP: Hover"))
       vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, opts("LSP: Code action"))
       vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts("LSP: Rename"))
       vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, opts("LSP: References"))
@@ -89,7 +85,6 @@ return {
     end
 
     local lspconfig = require("lspconfig")
-    local util = require("lspconfig.util")
     require("mason-lspconfig").setup_handlers({
       function(server_name)
         lspconfig[server_name].setup({
@@ -129,7 +124,7 @@ return {
         lspconfig.angularls.setup({
           on_attach = lsp_attach,
           capabilities = lsp_capabilities,
-          root_dir = util.root_pattern("angular.json", "project.json")
+          root_dir = require("lspconfig.util").root_pattern("angular.json", "project.json")
         })
       end,
     })
