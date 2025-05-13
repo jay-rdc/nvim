@@ -58,10 +58,10 @@ return {
 
     -- LSP Keymaps on attach
     vim.api.nvim_create_autocmd("LspAttach", {
-      group = vim.api.nvim_create_augroup("lsp.keymaps", {}),
-      callback = function()
+      group = vim.api.nvim_create_augroup("lsp-on-attach-keymaps", {}),
+      callback = function(args)
         local opts = function(desc)
-          return { remap = false, desc = desc or "" }
+          return { buffer = args.buf, remap = false, desc = desc or "" }
         end
 
         local function custom_hover()
