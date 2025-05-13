@@ -1,6 +1,9 @@
 return {
   "lewis6991/gitsigns.nvim",
   opts = {
+    preview_config = {
+      border = "rounded",
+    },
     on_attach = function(bufnr)
       local gs = package.loaded.gitsigns
 
@@ -29,6 +32,6 @@ return {
       map("n", "<leader>hb", function() gs.blame_line({ full = true }) end, { desc = "Gitsigns: Blame line" })
 
       map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Gitsigns: Select hunk" })
-    end
+    end,
   }
 }
