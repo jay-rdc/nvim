@@ -16,6 +16,7 @@ return {
       "lua",
       "markdown",
       "typescript",
+      "vim",
       "vimdoc",
     },
     sync_install = false,
