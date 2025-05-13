@@ -120,7 +120,7 @@ return {
 
     -- Angular
     vim.lsp.config("angularls", {
-      root_dir = require("lspconfig.util").root_pattern("angular.json", "project.json")
+      root_markers = { "angular.json", "project.json" },
     })
   end
 }
