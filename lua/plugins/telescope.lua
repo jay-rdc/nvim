@@ -14,6 +14,10 @@ return {
     local themes = require("telescope.themes")
     local builtin = require("telescope.builtin")
 
+    local show_preview_on_startup = {
+      preview = { hide_on_startup = false },
+    }
+
     require("telescope").setup({
       defaults = {
         layout_config = {
@@ -35,6 +39,11 @@ return {
             ["<C-u>"] = false,
           },
         },
+      },
+      pickers = {
+        current_buffer_fuzzy_find = show_preview_on_startup,
+        live_grep = show_preview_on_startup,
+        lsp_references = show_preview_on_startup,
       },
       extensions = {
         file_browser = {
