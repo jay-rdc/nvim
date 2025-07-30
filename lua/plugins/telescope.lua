@@ -19,6 +19,7 @@ return {
         layout_config = {
           center = {
             preview_cutoff = 0,
+            width = 0.6,
           },
         },
         layout_strategy = "center",
