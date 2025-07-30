@@ -16,8 +16,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "K", custom_hover, opts("LSP: Hover"))
     vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, opts("LSP: Code action"))
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts("LSP: Rename"))
-    vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, opts("LSP: References"))
     vim.keymap.set({ "n", "v" }, "<leader>=", vim.lsp.buf.format, opts("LSP: Format"))
+    vim.keymap.set("n", "<leader>lr", function()
+      if not pcall(require("telescope.builtin").lsp_references) then
+        vim.lsp.buf.references()
+      end
+    end, opts("LSP: References"))
 
     -- Diagnostics
     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts("Diagnostics: Go to previous diagnostic"))
