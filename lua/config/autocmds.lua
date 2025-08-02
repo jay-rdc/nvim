@@ -22,6 +22,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.lsp.buf.references()
       end
     end, opts("LSP: References"))
+    vim.keymap.set("n", "<leader>LR", "<cmd>LspRestart<CR>", opts("LSP: Restart Server"))
 
     -- Diagnostics
     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts("Diagnostics: Go to previous diagnostic"))
