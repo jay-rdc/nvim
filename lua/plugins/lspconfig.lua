@@ -52,7 +52,6 @@ return {
         "html",
         "jsonls",
         "lua_ls",
-        "ts_ls",
       },
     })
 
