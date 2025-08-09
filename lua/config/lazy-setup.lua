@@ -16,9 +16,5 @@ vim.keymap.set("n", "<leader>lz", vim.cmd.Lazy, { desc = "Lazy: Show dashboard" 
 return require("lazy").setup("plugins", {
   ui = {
     border = "rounded",
-    icons = {
-      lazy = " ",
-      require = " ",
-    },
   },
 })
