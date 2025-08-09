@@ -10,6 +10,8 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Go to previous word match then cente
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move highlighted text down one line" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move highlighted text up one line" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent highlighted text right then reselect"})
+vim.keymap.set("v", "<", "<gv", { desc = "Indent highlighted text left then reselect"})
 
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste yanked text without yanking replaced text" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line to system clipboard" })
