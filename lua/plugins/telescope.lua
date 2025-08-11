@@ -5,20 +5,23 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
     "nvim-telescope/telescope-ui-select.nvim",
+    "nvim-telescope/telescope-live-grep-args.nvim",
   },
   config = function()
+    local telescope = require("telescope")
     local actions = require("telescope.actions")
     local actions_layout = require("telescope.actions.layout")
-    local fb_extension = require("telescope").extensions.file_browser
+    local fb_extension = telescope.extensions.file_browser
     local fb_actions = fb_extension.actions
     local themes = require("telescope.themes")
     local builtin = require("telescope.builtin")
+    local lga_actions = require("telescope-live-grep-args.actions")
 
     local show_preview_on_startup = {
       preview = { hide_on_startup = false },
     }
 
-    require("telescope").setup({
+    telescope.setup({
       defaults = {
         layout_config = {
           center = {
@@ -57,14 +60,25 @@ return {
         ["ui-select"] = {
           themes.get_cursor(),
         },
+        live_grep_args = {
+          auto_quoting = true,
+          mappings = {
+            i = {
+              ["<C-k>"] = lga_actions.quote_prompt(),
+            },
+          },
+        },
       },
     })
-    require("telescope").load_extension("file_browser")
-    require("telescope").load_extension("ui-select")
+    telescope.load_extension("file_browser")
+    telescope.load_extension("ui-select")
+    telescope.load_extension("live_grep_args")
 
     vim.keymap.set("n", "<leader>e", fb_extension.file_browser, { desc = "Telescope: File browser" })
     vim.keymap.set("n", "<leader>fc", builtin.current_buffer_fuzzy_find, { desc = "Telescope: Find in current file" })
-    vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Telescope: Find word" })
+    vim.keymap.set("n", "<leader>fw", function()
+      telescope.extensions.live_grep_args.live_grep_args()
+    end, { desc = "Telescope: Live grep" })
     vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope: Find help tags" })
     vim.keymap.set("n", "<leader>fd", function()
       if not pcall(builtin.git_files, { show_untracked = true }) then
