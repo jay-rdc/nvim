@@ -62,6 +62,7 @@ return {
         },
         live_grep_args = {
           auto_quoting = true,
+          preview = { hide_on_startup = false },
           mappings = {
             i = {
               ["<C-k>"] = lga_actions.quote_prompt(),
