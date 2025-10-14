@@ -48,10 +48,10 @@ return {
         "angularls",
         "cssls",
         "emmet_language_server",
-        "eslint",
         "html",
         "jsonls",
         "lua_ls",
+        "ts_ls",
       },
     })
 
