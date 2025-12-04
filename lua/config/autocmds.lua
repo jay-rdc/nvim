@@ -11,12 +11,31 @@ vim.api.nvim_create_autocmd("LspAttach", {
       })
     end
 
+    -- for JS filetypes
+    local ft = vim.bo[args.buf].filetype
+    local js_ft = {
+      javascript = true,
+      typescript = true,
+      javascriptreact = true,
+      typescriptreact = true,
+    }
+
+    if js_ft[ft] then
+      vim.keymap.set("n", "<leader>EF", function()
+        vim.cmd("normal! mF")
+        vim.cmd("silent! %!eslint_d --stdin --fix-to-stdout --stdin-filename % 2>/dev/null")
+        vim.cmd("normal! `F")
+      end, opts("eslint_d: Fix errors"))
+    end
+
     -- LSP Actions
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts("LSP: Go to definition"))
     vim.keymap.set("n", "K", custom_hover, opts("LSP: Hover"))
     vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, opts("LSP: Code action"))
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts("LSP: Rename"))
-    vim.keymap.set({ "n", "v" }, "<leader>=", vim.lsp.buf.format, opts("LSP: Format"))
+    vim.keymap.set({ "n", "v" }, "<leader>=", function()
+      require("conform").format({ lsp_format = "fallback" })
+    end, opts("LSP: Format"))
     vim.keymap.set("n", "<leader>lr", function()
       if not pcall(require("telescope.builtin").lsp_references) then
         vim.lsp.buf.references()
