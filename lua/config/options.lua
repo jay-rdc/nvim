@@ -32,17 +32,34 @@ vim.opt.colorcolumn = "80"
 
 local has_wsl = vim.fn.has("wsl") == 1
 local has_tmux = vim.fn.has_key(vim.fn.environ(), "TMUX") == 1
-if (has_wsl and not has_tmux) then
-  vim.g.clipboard = {
-    name = "wsl-clipboard",
-    copy = {
-      ["+"] = "clip.exe",
-      ["*"] = "clip.exe",
-    },
-    paste = {
-      ["+"] = [[powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))]],
-      ["*"] = [[powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))]],
-    },
-    cache_enabled = 0,
-  }
+-- Detect if OSC52 clipboard provider exists
+local has_osc52, osc52 = pcall(require, "vim.ui.clipboard.osc52")
+
+if not has_tmux then
+  if has_wsl then
+    vim.g.clipboard = {
+      name = "wsl-clipboard",
+      copy = {
+        ["+"] = "clip.exe",
+        ["*"] = "clip.exe",
+      },
+      paste = {
+        ["+"] = [[powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))]],
+        ["*"] = [[powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))]],
+      },
+    }
+  end
+  if has_osc52 then
+    vim.g.clipboard = {
+      name = "osc52-clipboard",
+      copy = {
+        ["+"] = osc52.copy("+"),
+        ["*"] = osc52.copy("*"),
+      },
+      paste = {
+        ["+"] = osc52.paste("+"),
+        ["*"] = osc52.paste("*"),
+      },
+    }
+  end
 end
