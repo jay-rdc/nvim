@@ -1,7 +1,7 @@
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("lsp-on-attach-keymaps", {}),
   callback = function(args)
-    local opts = function(desc)
+    local function opts(desc)
       return { buffer = args.buf, remap = false, desc = desc or "" }
     end
 
@@ -9,6 +9,15 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.lsp.buf.hover({
         border = "rounded"
       })
+    end
+
+    local function get_diagnostic_float_win()
+      for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+        local cfg = vim.api.nvim_win_get_config(win)
+        if cfg.relative ~= "" and vim.w[win].diagnostic then
+          return win
+        end
+      end
     end
 
     -- for JS filetypes
@@ -46,7 +55,27 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- Diagnostics
     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts("Diagnostics: Go to previous diagnostic"))
     vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts("Diagnostics: Go to next diagnostic"))
-    vim.keymap.set("n", "<leader>df", vim.diagnostic.open_float, opts("Diagnostics: Open float"))
     vim.keymap.set("n", "<leader>dq", vim.diagnostic.setqflist, opts("Diagnostics: Set quickfix list"))
+    vim.keymap.set("n", "<leader>df", function()
+      local existing = get_diagnostic_float_win()
+      if existing then
+        -- float already exists, enter it
+        vim.api.nvim_set_current_win(existing)
+        return
+      end
+
+      -- no existing float, open a new one
+      local before = vim.api.nvim_tabpage_list_wins(0)
+      vim.diagnostic.open_float()
+
+      -- detect the newly-created window
+      local after = vim.api.nvim_tabpage_list_wins(0)
+      for _, w in ipairs(after) do
+        if not vim.tbl_contains(before, w) then
+          vim.api.nvim_set_current_win(w)
+          return
+        end
+      end
+    end, { desc = "Diagnostics: Open float" })
   end,
 })
