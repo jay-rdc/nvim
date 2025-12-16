@@ -1,30 +1,19 @@
 return {
   "nvim-lualine/lualine.nvim",
   config = function()
-    local custom_theme = {
-      normal = {
-        a = "StatusLineSectionA",
-        b = "StatusLineSectionB",
-        c = { bg = "none" },
-      },
-      inactive = {
-        a = "StatusLineSectionANC",
-        b = "StatusLineSectionBNC",
-      }
-    }
-
-    local function active_indicator()
-      return {
-        function() return " " end,
-        color = "StatusLineActiveIndicator",
-        separator = { left = "", right = "" },
-        padding = 0,
-      }
-    end
-
     require("lualine").setup({
       options = {
-        theme = custom_theme,
+        theme = {
+          normal = {
+            a = "StatusLineSectionA",
+            b = "StatusLineSectionB",
+            c = { bg = "none" },
+          },
+          inactive = {
+            a = "StatusLineSectionANC",
+            b = "StatusLineSectionBNC",
+          }
+        },
         component_separators = "|",
         section_separators = { left = "", right = "" },
         refresh = { statusline = 100 },
@@ -32,7 +21,13 @@ return {
       },
       sections = {
         lualine_a = {
-          active_indicator(),
+          {
+            -- active buffer indicator
+            function() return " " end,
+            color = "StatusLineActiveIndicator",
+            separator = { left = "", right = "" },
+            padding = 0,
+          },
           {
             "FugitiveHead",
             icon = "",
