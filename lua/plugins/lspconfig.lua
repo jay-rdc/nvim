@@ -50,7 +50,7 @@ return {
         "emmet_language_server",
         "html",
         "jsonls",
-        "lua_ls@3.15.0",
+        "lua_ls",
         "ts_ls",
       },
     })
