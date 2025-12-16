@@ -14,9 +14,9 @@ return {
     local builtin = require("telescope.builtin")
     local lga_actions = require("telescope-live-grep-args.actions")
 
-    local show_preview_on_startup = {
-      preview = { hide_on_startup = false },
-    }
+    -- local show_preview_on_startup = {
+    --   preview = { hide_on_startup = false },
+    -- }
 
     telescope.setup({
       defaults = {
@@ -40,11 +40,11 @@ return {
           },
         },
       },
-      pickers = {
-        current_buffer_fuzzy_find = show_preview_on_startup,
-        live_grep = show_preview_on_startup,
-        lsp_references = show_preview_on_startup,
-      },
+      -- pickers = {
+      --   current_buffer_fuzzy_find = show_preview_on_startup,
+      --   live_grep = show_preview_on_startup,
+      --   lsp_references = show_preview_on_startup,
+      -- },
       extensions = {
         ["ui-select"] = {
           themes.get_cursor(),
