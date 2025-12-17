@@ -49,8 +49,14 @@ return {
         end
       },
       keymaps = {
+        ["q"] = { "actions.close", mode = "n" },
         ["<C-j>"] = { "actions.preview_scroll_down", mode = "n" },
         ["<C-k>"] = { "actions.preview_scroll_up", mode = "n" },
+        ["<C-v>"] = { "actions.select", opts = { vertical = true }, mode = "n" },
+        ["<C-s>"] = { "actions.select", opts = { horizontal = true }, mode = "n" },
+
+        -- unbind
+        ["<C-h>"] = false,
       },
     })
 
