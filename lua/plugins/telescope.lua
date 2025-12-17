@@ -36,7 +36,11 @@ return {
             ["<Esc>"] = actions.close,
             ["<A-p>"] = actions_layout.toggle_preview,
             ["<C-f>"] = actions.preview_scrolling_up,
+            ["<C-s>"] = actions.file_split,
+
+            -- unbind
             ["<C-u>"] = false,
+            ["<C-x>"] = false,
           },
         },
       },
