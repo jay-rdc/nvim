@@ -20,12 +20,14 @@ return {
     telescope.setup({
       defaults = {
         layout_config = {
-          center = {
-            preview_cutoff = 0,
-            width = 0.6,
+          horizontal = {
+            prompt_position = "top",
+            preview_width = 0.6,
+            width = 0.8,
+            height = 0.8,
           },
         },
-        layout_strategy = "center",
+        layout_strategy = "horizontal",
         sorting_strategy = "ascending",
         preview = { hide_on_startup = true },
         prompt_prefix = " ",
