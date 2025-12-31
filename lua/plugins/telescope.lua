@@ -35,11 +35,19 @@ return {
         mappings = {
           i = {
             ["<Esc>"] = actions.close,
-            ["<A-p>"] = actions_layout.toggle_preview,
-            ["<C-f>"] = actions.preview_scrolling_up,
             ["<C-s>"] = actions.file_split,
+            ["<A-p>"] = actions_layout.toggle_preview,
+            ["<A-h>"] = actions.preview_scrolling_left,
+            ["<A-j>"] = actions.preview_scrolling_down,
+            ["<A-k>"] = actions.preview_scrolling_up,
+            ["<A-l>"] = actions.preview_scrolling_right,
+            ["<A-S-h>"] = actions.results_scrolling_left,
+            ["<A-S-j>"] = actions.results_scrolling_down,
+            ["<A-S-k>"] = actions.results_scrolling_up,
+            ["<A-S-l>"] = actions.results_scrolling_right,
 
             -- unbind
+            ["<C-d>"] = false,
             ["<C-u>"] = false,
             ["<C-x>"] = false,
           },
