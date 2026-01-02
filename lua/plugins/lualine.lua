@@ -45,6 +45,9 @@ return {
             "filename",
           },
           {
+            "diff",
+          },
+          {
             "diagnostics",
             sources = { "nvim_diagnostic" },
             symbols = {
@@ -72,6 +75,9 @@ return {
           },
           {
             "filename",
+          },
+          {
+            "diff",
           },
           {
             "diagnostics",
